@@ -56,4 +56,4 @@ OpcUa_Void          OPCUA_DLLCALL OpcUa_P_Thread_Sleep(     OpcUa_UInt32    msec
 /*============================================================================
  * Get Current Thread Id
  *===========================================================================*/
-OpcUa_UInt32        OPCUA_DLLCALL OpcUa_P_Thread_GetCurrentThreadId(void);
+OpcUa_UInt32        OPCUA_DLLCALL OpcUa_P_Thread_GetCurrentThreadId(OpcUa_Void);

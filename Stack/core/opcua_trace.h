@@ -49,7 +49,7 @@ OPCUA_BEGIN_EXTERN_C
 /**
 * Initialize all resources needed for tracing.
 */
-OPCUA_EXPORT OpcUa_StatusCode OPCUA_DLLCALL OpcUa_Trace_Initialize();
+OPCUA_EXPORT OpcUa_StatusCode OPCUA_DLLCALL OpcUa_Trace_Initialize(OpcUa_Void);
 
 /*============================================================================
  * Trace Initialize
@@ -57,7 +57,7 @@ OPCUA_EXPORT OpcUa_StatusCode OPCUA_DLLCALL OpcUa_Trace_Initialize();
 /**
 * Clear all resources needed for tracing.
 */
-OPCUA_EXPORT OpcUa_Void OPCUA_DLLCALL OpcUa_Trace_Clear();
+OPCUA_EXPORT OpcUa_Void OPCUA_DLLCALL OpcUa_Trace_Clear(OpcUa_Void);
 
 /*============================================================================
  * Change Trace Level

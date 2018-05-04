@@ -100,7 +100,7 @@ OpcUa_Void OpcUa_Thread_Sleep(                  OpcUa_UInt32    msecTimeout);
  * @return The thread ID.
  */
 OPCUA_EXPORT
-OpcUa_UInt32 OpcUa_Thread_GetCurrentThreadId();
+OpcUa_UInt32 OpcUa_Thread_GetCurrentThreadId(	OpcUa_Void);
 
 /**
  * @brief Check if the main function of the given thread object is running.

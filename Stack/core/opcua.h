@@ -52,22 +52,22 @@ extern OpcUa_ProxyStubConfiguration     OpcUa_ProxyStub_g_Configuration;
 /*============================================================================
  * OpcUa_ProxyStub_RegisterChannel
  *===========================================================================*/
-OpcUa_Void OpcUa_ProxyStub_RegisterChannel();
+OpcUa_Void OpcUa_ProxyStub_RegisterChannel(OpcUa_Void);
 
 /*============================================================================
  * OpcUa_ProxyStub_RegisterEndpoint
  *===========================================================================*/
-OpcUa_Void OpcUa_ProxyStub_RegisterEndpoint();
+OpcUa_Void OpcUa_ProxyStub_RegisterEndpoint(OpcUa_Void);
 
 /*============================================================================
  * OpcUa_ProxyStub_DeRegisterChannel
  *===========================================================================*/
-OpcUa_Void OpcUa_ProxyStub_DeRegisterChannel();
+OpcUa_Void OpcUa_ProxyStub_DeRegisterChannel(OpcUa_Void);
 
 /*============================================================================
  * OpcUa_ProxyStub_DeRegisterEndpoint
  *===========================================================================*/
-OpcUa_Void OpcUa_ProxyStub_DeRegisterEndpoint();
+OpcUa_Void OpcUa_ProxyStub_DeRegisterEndpoint(OpcUa_Void);
 
 OPCUA_END_EXTERN_C
 #endif /* _OpcUa_H_ */
