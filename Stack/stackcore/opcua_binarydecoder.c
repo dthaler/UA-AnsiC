@@ -329,7 +329,7 @@ OpcUa_StatusCode OpcUa_Boolean_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadBoolean(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Boolean*         a_pValue)
 {
     Implement_OpcUa_BinaryDecoder_ReadFixedLengthType(Boolean);
@@ -362,7 +362,7 @@ OpcUa_StatusCode OpcUa_SByte_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadSByte(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_SByte*           a_pValue)
 {
     Implement_OpcUa_BinaryDecoder_ReadFixedLengthType(SByte);
@@ -395,7 +395,7 @@ OpcUa_StatusCode OpcUa_Byte_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadByte(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Byte*            a_pValue)
 {
     Implement_OpcUa_BinaryDecoder_ReadFixedLengthType(Byte);
@@ -428,7 +428,7 @@ OpcUa_StatusCode OpcUa_Int16_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadInt16(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Int16*           a_pValue)
 {
     Implement_OpcUa_BinaryDecoder_ReadFixedLengthType(Int16);
@@ -461,7 +461,7 @@ OpcUa_StatusCode OpcUa_UInt16_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadUInt16(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_UInt16*          a_pValue)
 {
     Implement_OpcUa_BinaryDecoder_ReadFixedLengthType(UInt16);
@@ -494,7 +494,7 @@ OpcUa_StatusCode OpcUa_Int32_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadInt32(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Int32*           a_pValue)
 {
     Implement_OpcUa_BinaryDecoder_ReadFixedLengthType(Int32);
@@ -527,7 +527,7 @@ OpcUa_StatusCode OpcUa_UInt32_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadUInt32(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_UInt32*          a_pValue)
 {
     Implement_OpcUa_BinaryDecoder_ReadFixedLengthType(UInt32);
@@ -560,7 +560,7 @@ OpcUa_StatusCode OpcUa_Int64_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadInt64(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Int64*           a_pValue)
 {
     Implement_OpcUa_BinaryDecoder_ReadFixedLengthType(Int64);
@@ -593,7 +593,7 @@ OpcUa_StatusCode OpcUa_UInt64_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadUInt64(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_UInt64*          a_pValue)
 {
     Implement_OpcUa_BinaryDecoder_ReadFixedLengthType(UInt64);
@@ -626,7 +626,7 @@ OpcUa_StatusCode OpcUa_Float_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadFloat(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Float*           a_pValue)
 {
     Implement_OpcUa_BinaryDecoder_ReadFixedLengthType(Float);
@@ -659,7 +659,7 @@ OpcUa_StatusCode OpcUa_Double_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadDouble(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Double*          a_pValue)
 {
     Implement_OpcUa_BinaryDecoder_ReadFixedLengthType(Double);
@@ -735,7 +735,7 @@ OpcUa_StatusCode OpcUa_String_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadString(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_String*          a_pValue)
 {
     OpcUa_BinaryDecoder* pHandle = OpcUa_Null;
@@ -793,7 +793,7 @@ OpcUa_StatusCode OpcUa_DateTime_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadDateTime(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_DateTime*        a_pValue)
 {
     OpcUa_BinaryDecoder* pHandle = OpcUa_Null;
@@ -863,7 +863,7 @@ OpcUa_StatusCode OpcUa_Guid_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadGuid(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Guid*            a_pValue)
 {
     OpcUa_BinaryDecoder* pHandle = OpcUa_Null;
@@ -949,7 +949,7 @@ OpcUa_StatusCode OpcUa_ByteString_BinaryDecode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadByteString(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_ByteString*      a_pValue)
 {
     OpcUa_BinaryDecoder* pHandle = OpcUa_Null;
@@ -977,7 +977,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadByteString(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadXmlElement(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_XmlElement*      a_pValue)
 {
     OpcUa_BinaryDecoder* pHandle = OpcUa_Null;
@@ -1115,7 +1115,7 @@ static OpcUa_StatusCode OpcUa_BinaryDecoder_ReadNodeIdBody(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadNodeId(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_NodeId*          a_pValue)
 {
     OpcUa_BinaryDecoder* pHandle = OpcUa_Null;
@@ -1152,7 +1152,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadNodeId(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadExpandedNodeId(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_ExpandedNodeId*  a_pValue)
 {
     OpcUa_BinaryDecoder* pHandle = OpcUa_Null;
@@ -1202,7 +1202,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadExpandedNodeId(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadStatusCode(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_StatusCode*      a_pValue)
 {
     OpcUa_BinaryDecoder* pHandle = OpcUa_Null;
@@ -1230,7 +1230,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadStatusCode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadDiagnosticInfo(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_DiagnosticInfo*  a_pValue)
 {
     OpcUa_BinaryDecoder* pHandle = OpcUa_Null;
@@ -1322,7 +1322,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadDiagnosticInfo(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadLocalizedText(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_LocalizedText*   a_pValue)
 {
     OpcUa_BinaryDecoder* pHandle = OpcUa_Null;
@@ -1368,7 +1368,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadLocalizedText(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadQualifiedName(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_QualifiedName*   a_pValue)
 {
     OpcUa_BinaryDecoder* pHandle = OpcUa_Null;
@@ -1398,7 +1398,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadQualifiedName(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadEncodeable(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_EncodeableType*  a_pType,
     OpcUa_Void*            a_pValue);
 
@@ -1467,7 +1467,7 @@ static OpcUa_StatusCode OpcUa_BinaryDecoder_FindBodyType(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadExtensionObject(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_ExtensionObject* a_pValue)
 {
     OpcUa_Int32 nLength = 0;
@@ -1605,7 +1605,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadExtensionObject(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadVariant(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Variant*         a_pValue);
 
 /*============================================================================
@@ -1613,7 +1613,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadVariant(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadDataValue(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_DataValue*       a_pValue)
 {
     OpcUa_BinaryDecoder* pHandle = OpcUa_Null;
@@ -1687,7 +1687,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadDataValue(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadEncodeable(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_EncodeableType*  a_pType,
     OpcUa_Void*            a_pValue)
 {
@@ -1726,11 +1726,11 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadEncodeable(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadEnumerated(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_EnumeratedType*  a_pType,
     OpcUa_Int32*           a_pValue)
 {
-    OpcUa_StringA pName;
+    OpcUa_ConstStringA pName;
     OpcUa_BinaryDecoder* pHandle = OpcUa_Null;
 
     OpcUa_InitializeStatus(OpcUa_Module_Serializer, "OpcUa_BinaryDecoder_ReadEnumerated");
@@ -1766,7 +1766,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadEnumerated(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadBooleanArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Boolean**        a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -1795,7 +1795,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadBooleanArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadSByteArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_SByte**          a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -1824,7 +1824,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadSByteArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadByteArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Byte**           a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -1853,7 +1853,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadByteArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadInt16Array(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Int16**          a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -1882,7 +1882,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadInt16Array(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadUInt16Array(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_UInt16**         a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -1911,7 +1911,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadUInt16Array(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadInt32Array(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Int32**          a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -1940,7 +1940,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadInt32Array(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadUInt32Array(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_UInt32**         a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -1969,7 +1969,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadUInt32Array(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadInt64Array(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Int64**          a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -1998,7 +1998,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadInt64Array(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadUInt64Array(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_UInt64**         a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2027,7 +2027,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadUInt64Array(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadFloatArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Float**          a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2056,7 +2056,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadFloatArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadDoubleArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Double**         a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2085,7 +2085,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadDoubleArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadStringArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_String**         a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2114,7 +2114,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadStringArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadDateTimeArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_DateTime**       a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2143,7 +2143,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadDateTimeArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadGuidArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Guid**           a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2172,7 +2172,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadGuidArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadByteStringArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_ByteString**     a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2201,7 +2201,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadByteStringArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadXmlElementArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_XmlElement**     a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2230,7 +2230,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadXmlElementArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadNodeIdArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_NodeId**         a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2259,7 +2259,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadNodeIdArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadExpandedNodeIdArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_ExpandedNodeId** a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2288,7 +2288,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadExpandedNodeIdArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadStatusCodeArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_StatusCode**     a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2317,7 +2317,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadStatusCodeArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadDiagnosticInfoArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_DiagnosticInfo** a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2346,7 +2346,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadDiagnosticInfoArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadLocalizedTextArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_LocalizedText**  a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2375,7 +2375,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadLocalizedTextArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadQualifiedNameArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_QualifiedName**  a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2404,7 +2404,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadQualifiedNameArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadExtensionObjectArray(
     struct _OpcUa_Decoder*  a_pDecoder,
-    OpcUa_StringA           a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_ExtensionObject** a_ppArray,
     OpcUa_Int32*            a_pCount)
 {
@@ -2433,7 +2433,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadExtensionObjectArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadDataValueArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_DataValue**      a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2462,7 +2462,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadDataValueArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadVariantArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Variant**        a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
@@ -2491,7 +2491,7 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadVariantArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadEncodeableArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_EncodeableType*  a_pType,
     OpcUa_Void**           a_ppArray,
     OpcUa_Int32*           a_pCount)
@@ -2579,12 +2579,12 @@ OpcUa_StatusCode OpcUa_BinaryDecoder_ReadEncodeableArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadEnumeratedArray(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_EnumeratedType*  a_pType,
     OpcUa_Int32**          a_ppArray,
     OpcUa_Int32*           a_pCount)
 {
-    OpcUa_StringA pName;
+    OpcUa_ConstStringA pName;
     OpcUa_Int32 ii = 0;
     OpcUa_Int32 iLength = 0;
     OpcUa_BinaryDecoder* pHandle = OpcUa_Null;
@@ -2674,7 +2674,7 @@ OpcUa_GotoErrorIfBad(uStatus);
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryDecoder_ReadVariant(
     struct _OpcUa_Decoder* a_pDecoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Variant*         a_pValue)
 {
     OpcUa_Byte uEncodingByte = 0;

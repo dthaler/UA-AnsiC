@@ -240,14 +240,15 @@ OpcUa_StatusCode OpcUa_P_Socket_HandleExternalEvent(OpcUa_SocketManager SocketMa
 /*!
  * @brief Create and initialize a listening OpcUa_Socket.
  *
+ * @param IpAddress [in]    The IP address to listen on.
  * @param Port      [in]    The port to listen on.
  * @param Status    [out]   How the operation went.
  *
  * @return The created system socket. An invalid socket in case of error.
  */
-OpcUa_RawSocket OpcUa_P_Socket_CreateServer(OpcUa_StringA     IpAddress,
-                                            OpcUa_Int16       Port,
-                                            OpcUa_StatusCode* Status);
+OpcUa_RawSocket OpcUa_P_Socket_CreateServer(OpcUa_ConstStringA IpAddress,
+                                            OpcUa_Int16        Port,
+                                            OpcUa_StatusCode*  Status);
 
 /*!
  * @brief Create a OpcUa_Socket and connect to specified network node.
@@ -261,7 +262,7 @@ OpcUa_RawSocket OpcUa_P_Socket_CreateServer(OpcUa_StringA     IpAddress,
  */
 OpcUa_RawSocket OpcUa_P_Socket_CreateClient(OpcUa_UInt16                    Port,
                                             OpcUa_UInt16                    RemotePort,
-                                            OpcUa_StringA                   RemoteAddress,
+                                            OpcUa_ConstStringA              RemoteAddress,
                                             OpcUa_StatusCode*               Status);
 
 /*!
@@ -292,7 +293,7 @@ OpcUa_UInt16 OpcUa_Socket_HToNS(OpcUa_UInt16 a_hstShort);
  * Set socket to nonblocking mode
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_SocketManager_InternalCreateServer(  OpcUa_SocketManager         a_pSocketManager,
-                                                            OpcUa_StringA               a_sIpAddress,
+                                                            OpcUa_ConstStringA          a_sIpAddress,
                                                             OpcUa_UInt16                a_uPort,
                                                             OpcUa_Socket_EventCallback  a_pfnSocketCallBack,
                                                             OpcUa_Void*                 a_pCallbackData,

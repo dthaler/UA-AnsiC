@@ -346,7 +346,7 @@ OpcUa_StatusCode OpcUa_Boolean_BinaryEncode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteBoolean(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Boolean*         a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -379,7 +379,7 @@ OpcUa_StatusCode OpcUa_SByte_BinaryEncode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteSByte(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_SByte*           a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -412,7 +412,7 @@ OpcUa_StatusCode OpcUa_Byte_BinaryEncode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteByte(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Byte*            a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -445,7 +445,7 @@ OpcUa_StatusCode OpcUa_Int16_BinaryEncode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteInt16(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Int16*           a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -478,7 +478,7 @@ OpcUa_StatusCode OpcUa_UInt16_BinaryEncode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteUInt16(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_UInt16*          a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -511,7 +511,7 @@ OpcUa_StatusCode OpcUa_Int32_BinaryEncode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteInt32(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Int32*           a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -544,7 +544,7 @@ OpcUa_StatusCode OpcUa_UInt32_BinaryEncode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteUInt32(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_UInt32*          a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -577,7 +577,7 @@ OpcUa_StatusCode OpcUa_Int64_BinaryEncode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteInt64(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Int64*           a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -610,7 +610,7 @@ OpcUa_StatusCode OpcUa_UInt64_BinaryEncode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteUInt64(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_UInt64*          a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -643,7 +643,7 @@ OpcUa_StatusCode OpcUa_Float_BinaryEncode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteFloat(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Float*           a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -676,7 +676,7 @@ OpcUa_StatusCode OpcUa_Double_BinaryEncode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteDouble(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Double*          a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -729,7 +729,7 @@ OpcUa_FinishErrorHandling;
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteString(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_String*          a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -813,7 +813,7 @@ OpcUa_StatusCode OpcUa_DateTime_BinaryEncode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteDateTime(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_DateTime*        a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -882,7 +882,7 @@ OpcUa_StatusCode OpcUa_Guid_BinaryEncode(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteGuid(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Guid*            a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -962,7 +962,7 @@ OpcUa_FinishErrorHandling;
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteByteString(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_ByteString*      a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -1011,7 +1011,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteByteString(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteXmlElement(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_XmlElement*      a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -1285,7 +1285,7 @@ static OpcUa_StatusCode OpcUa_BinaryEncoder_WriteNodeIdBody(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteNodeId(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_NodeId*          a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -1328,7 +1328,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteNodeId(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteExpandedNodeId(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_ExpandedNodeId*  a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -1418,7 +1418,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteExpandedNodeId(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteStatusCode(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_StatusCode*      a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -1503,7 +1503,7 @@ OpcUa_Byte OpcUa_DiagnosticInfo_GetEncodingByte(OpcUa_DiagnosticInfo* a_pValue)
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteDiagnosticInfo(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_DiagnosticInfo*  a_pValue,
     OpcUa_Int32*           a_pSize);
 
@@ -1589,7 +1589,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_DiagnosticInfoGetSize(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteDiagnosticInfo(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_DiagnosticInfo*  a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -1748,7 +1748,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_LocalizedTextGetSize(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteLocalizedText(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_LocalizedText*   a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -1801,7 +1801,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteLocalizedText(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteQualifiedName(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_QualifiedName*   a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -1843,7 +1843,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteQualifiedName(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteEncodeable(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Void*            a_pValue,
     OpcUa_EncodeableType*  a_pType,
     OpcUa_Int32*           a_pSize);
@@ -1962,7 +1962,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_ExtensionObjectGetSize(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteExtensionObject(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_ExtensionObject* a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -2140,7 +2140,7 @@ OpcUa_Byte OpcUa_DataValue_GetEncodingByte(OpcUa_DataValue* a_pValue)
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteVariant(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Variant*         a_pValue,
     OpcUa_Int32*           a_pSize);
 
@@ -2229,7 +2229,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_DataValueGetSize(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteDataValue(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_DataValue*       a_pValue,
     OpcUa_Int32*           a_pSize)
 {
@@ -2310,7 +2310,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteDataValue(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteEncodeable(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Void*            a_pValue,
     OpcUa_EncodeableType*  a_pType,
     OpcUa_Int32*           a_pSize)
@@ -2362,7 +2362,7 @@ OpcUa_FinishErrorHandling;
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteEnumerated(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Int32*           a_pValue,
     OpcUa_EnumeratedType*  a_pType,
     OpcUa_Int32*           a_pSize)
@@ -2393,7 +2393,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteEnumerated(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteBooleanArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Boolean*         a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2422,7 +2422,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteBooleanArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteSByteArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_SByte*           a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2451,7 +2451,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteSByteArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteByteArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Byte*            a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2480,7 +2480,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteByteArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteInt16Array(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Int16*           a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2509,7 +2509,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteInt16Array(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteUInt16Array(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_UInt16*          a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2538,7 +2538,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteUInt16Array(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteInt32Array(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Int32*           a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2567,7 +2567,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteInt32Array(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteUInt32Array(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_UInt32*          a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2596,7 +2596,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteUInt32Array(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteInt64Array(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Int64*           a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2625,7 +2625,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteInt64Array(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteUInt64Array(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_UInt64*          a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2654,7 +2654,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteUInt64Array(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteFloatArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Float*           a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2683,7 +2683,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteFloatArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteDoubleArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Double*          a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2712,7 +2712,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteDoubleArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteStringArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_String*          a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2741,7 +2741,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteStringArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteDateTimeArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_DateTime*        a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2770,7 +2770,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteDateTimeArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteGuidArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Guid*            a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2799,7 +2799,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteGuidArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteByteStringArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_ByteString*      a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2828,7 +2828,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteByteStringArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteXmlElementArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_XmlElement*      a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2857,7 +2857,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteXmlElementArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteNodeIdArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_NodeId*          a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2886,7 +2886,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteNodeIdArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteExpandedNodeIdArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_ExpandedNodeId*  a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2915,7 +2915,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteExpandedNodeIdArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteStatusCodeArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_StatusCode*      a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2944,7 +2944,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteStatusCodeArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteDiagnosticInfoArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_DiagnosticInfo*  a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -2973,7 +2973,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteDiagnosticInfoArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteLocalizedTextArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_LocalizedText*   a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -3002,7 +3002,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteLocalizedTextArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteQualifiedNameArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_QualifiedName*   a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -3031,7 +3031,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteQualifiedNameArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteExtensionObjectArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_ExtensionObject* a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -3060,7 +3060,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteExtensionObjectArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteDataValueArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_DataValue*       a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -3089,7 +3089,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteDataValueArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteVariantArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Variant*         a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_Int32*           a_pSize)
@@ -3118,7 +3118,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteVariantArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteEncodeableArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Void*            a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_EncodeableType*  a_pType,
@@ -3208,7 +3208,7 @@ OpcUa_StatusCode OpcUa_BinaryEncoder_WriteEncodeableArray(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteEnumeratedArray(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Int32*           a_pArray,
     OpcUa_Int32            a_nCount,
     OpcUa_EnumeratedType*  a_pType,
@@ -3302,7 +3302,7 @@ if (pSize != OpcUa_Null) *a_pSize += *pSize;
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_BinaryEncoder_WriteVariant(
     struct _OpcUa_Encoder* a_pEncoder,
-    OpcUa_StringA          a_sFieldName,
+    OpcUa_ConstStringA     a_sFieldName,
     OpcUa_Variant*         a_pValue,
     OpcUa_Int32*           a_pSize)
 {

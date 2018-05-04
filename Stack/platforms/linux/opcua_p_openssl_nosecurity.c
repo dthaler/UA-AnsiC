@@ -72,7 +72,7 @@ OpcUa_StatusCode OpcUa_P_Crypto_NoSecurity_CreateCertificate(
 OpcUa_StatusCode OpcUa_P_Crypto_NoSecurity_GetPublicKeyFromCert(
     OpcUa_CryptoProvider*       a_pProvider,
     OpcUa_ByteString*           a_pCertificate,
-    OpcUa_StringA               a_password,
+    OpcUa_ConstStringA          a_password,
     OpcUa_Key*                  a_pPublicKey)
 {
     OpcUa_ReferenceParameter(a_pProvider);

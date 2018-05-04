@@ -58,8 +58,8 @@ OPCUA_EXPORT OpcUa_Void OpcUa_StringTable_Clear(
   @param pStrings [in] The strings to add.
 */
 OPCUA_EXPORT OpcUa_StatusCode OpcUa_StringTable_AddStringList(
-    OpcUa_StringTable* pTable,
-    OpcUa_StringA*     pStrings);
+    OpcUa_StringTable*  pTable,
+    OpcUa_ConstStringA* pStrings);
 
 /**
   @brief Adds an array of strings to the table.

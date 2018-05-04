@@ -41,7 +41,7 @@
 /*============================================================================
  * Copy uintCount Characters from a OpcUa_StringA to another OpcUa_StringA
  *===========================================================================*/
-OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_String_strncpy(OpcUa_StringA strDestination, OpcUa_UInt32 uiDestSize, OpcUa_StringA strSource, OpcUa_UInt32 uiLength)
+OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_String_strncpy(OpcUa_StringA strDestination, OpcUa_UInt32 uiDestSize, OpcUa_ConstStringA strSource, OpcUa_UInt32 uiLength)
 {
 #if OPCUA_USE_SAFE_FUNCTIONS
     if(strncpy_s(strDestination, uiDestSize + 1, strSource, uiLength) != 0 )
@@ -62,7 +62,7 @@ OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_String_strncpy(OpcUa_StringA strDestinati
 /*============================================================================
  * Append uintCount Characters from a OpcUa_String to another OpcUa_String.
  *===========================================================================*/
-OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_String_strncat(OpcUa_StringA strDestination, OpcUa_UInt32 uiDestSize, OpcUa_StringA strSource, OpcUa_UInt32 uiLength)
+OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_String_strncat(OpcUa_StringA strDestination, OpcUa_UInt32 uiDestSize, OpcUa_ConstStringA strSource, OpcUa_UInt32 uiLength)
 {
     #if OPCUA_USE_SAFE_FUNCTIONS
         if(strncat_s(strDestination, uiDestSize, strSource, uiLength) != 0 )
@@ -84,7 +84,7 @@ OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_String_strncat(OpcUa_StringA strDestinati
 /*============================================================================
  * Get the Length from a OpcUa_String
  *===========================================================================*/
-OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_String_strlen(OpcUa_StringA a_pCString)
+OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_String_strlen(OpcUa_ConstStringA a_pCString)
 {
     return (OpcUa_Int32) strlen(a_pCString);
 }
@@ -92,7 +92,7 @@ OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_String_strlen(OpcUa_StringA a_pCString)
 /*============================================================================
  * Compare two OpcUa_Strings Case Sensitive
  *===========================================================================*/
-OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_String_strncmp(OpcUa_StringA string1, OpcUa_StringA string2, OpcUa_UInt32 uiLength)
+OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_String_strncmp(OpcUa_ConstStringA string1, OpcUa_ConstStringA string2, OpcUa_UInt32 uiLength)
 {
     return (OpcUa_Int32)strncmp(string1, string2, uiLength);
 }
@@ -100,7 +100,7 @@ OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_String_strncmp(OpcUa_StringA string1, OpcUa_St
 /*============================================================================
 * Compare two OpcUa_Strings NOT Case Sensitive
 *===========================================================================*/
-OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_String_strnicmp(OpcUa_StringA string1, OpcUa_StringA string2, OpcUa_UInt32 uiLength)
+OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_String_strnicmp(OpcUa_ConstStringA string1, OpcUa_ConstStringA string2, OpcUa_UInt32 uiLength)
 {
     return (OpcUa_Int32) strncasecmp(string1, string2, uiLength);
 }
@@ -108,7 +108,7 @@ OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_String_strnicmp(OpcUa_StringA string1, OpcUa_S
 /*============================================================================
  * Write Values to a OpcUa_String
  *===========================================================================*/
-OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_String_vsnprintf(OpcUa_StringA sDest, OpcUa_UInt32 nCount, const OpcUa_StringA sFormat, varg_list vaList)
+OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_String_vsnprintf(OpcUa_StringA sDest, OpcUa_UInt32 nCount, OpcUa_ConstStringA sFormat, varg_list vaList)
 {
     OpcUa_Int   nRetval;
 
@@ -129,7 +129,7 @@ OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_String_vsnprintf(OpcUa_StringA sDest, OpcUa_UI
 /* OPCUA_DLLCALL with varglist wont work ... -> vsnprintf */
 OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_String_snprintf(  OpcUa_StringA a_sTarget,
                                                     OpcUa_UInt32  a_nCount,
-                                                    OpcUa_StringA a_sFormat,
+                                                    OpcUa_ConstStringA a_sFormat,
                                                     ...)
 {
     OpcUa_Int   nRetval;

@@ -23,7 +23,7 @@
 OpcUa_StatusCode OpcUa_EnumeratedType_FindName(
     OpcUa_EnumeratedType* a_pType,
     OpcUa_Int32           a_nValue,
-    OpcUa_StringA*        a_pName)
+    OpcUa_ConstStringA*   a_pName)
 {
     OpcUa_UInt32 ii = 0;
 
@@ -58,7 +58,7 @@ OpcUa_StatusCode OpcUa_EnumeratedType_FindName(
  *===========================================================================*/
 OPCUA_EXPORT OpcUa_StatusCode OpcUa_EnumeratedType_FindValue(
     OpcUa_EnumeratedType* a_pType,
-    OpcUa_StringA         a_sName,
+    OpcUa_ConstStringA    a_sName,
     OpcUa_Int32*          a_pValue)
 {
     OpcUa_UInt32 ii = 0;

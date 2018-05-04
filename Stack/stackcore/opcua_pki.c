@@ -55,8 +55,8 @@ OPCUA_EXPORT OpcUa_StatusCode OpcUa_PKIProvider_OpenCertificateStore(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_PKIProvider_LoadCertificate(
     struct _OpcUa_PKIProvider*  a_pPKI,
-    OpcUa_Void*                 a_pLoadHandle,
-    OpcUa_Void*                 a_pCertificateStore,
+    const OpcUa_Void*           a_pLoadHandle,
+    const OpcUa_Void*           a_pCertificateStore,
     OpcUa_ByteString*           a_pCertificate)
 {
     OpcUa_DeclareErrorTraceModule(OpcUa_Module_PkiProvider);

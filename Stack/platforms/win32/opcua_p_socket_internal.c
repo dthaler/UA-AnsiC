@@ -526,7 +526,7 @@ OpcUa_FinishErrorHandling;
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_SocketManager_InternalCreateServer(
     OpcUa_SocketManager         a_pSocketManager,
-    OpcUa_StringA               a_sIpAddress,
+    OpcUa_ConstStringA          a_sIpAddress,
     OpcUa_UInt16                a_uPort,
     OpcUa_Socket_EventCallback  a_pfnSocketCallBack,
     OpcUa_Void*                 a_pCallbackData,
@@ -1291,7 +1291,7 @@ OpcUa_StatusCode OpcUa_P_Socket_FillFdSet(  OpcUa_SocketManager     pSocketManag
 * CreateServer
 *===========================================================================*/
 /* create a socket and configure it as a server socket */
-OpcUa_RawSocket OpcUa_P_Socket_CreateServer(    OpcUa_StringA       IpAddress,
+OpcUa_RawSocket OpcUa_P_Socket_CreateServer(    OpcUa_ConstStringA  IpAddress,
                                                 OpcUa_Int16         Port,
                                                 OpcUa_StatusCode*   Status)
 {
@@ -1505,7 +1505,7 @@ OpcUa_FinishErrorHandling;
  *===========================================================================*/
 OpcUa_RawSocket OpcUa_P_Socket_CreateClient(    OpcUa_UInt16                    a_uPort,
                                                 OpcUa_UInt16                    a_uRemotePort,
-                                                OpcUa_StringA                   a_sRemoteAddress,
+                                                OpcUa_ConstStringA              a_sRemoteAddress,
                                                 OpcUa_StatusCode*               a_uStatus)
 {
     OpcUa_StatusCode    uStatus     = OpcUa_Good;

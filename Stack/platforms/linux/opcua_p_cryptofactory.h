@@ -38,7 +38,7 @@ OPCUA_BEGIN_EXTERN_C
   @param securityPolicy     [in]  The security policy.
   @param pProvider          [out] The resulting CryptoProvider.
 */
-OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_CryptoFactory_CreateCryptoProvider(  OpcUa_StringA           Uri,
+OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_CryptoFactory_CreateCryptoProvider(  OpcUa_ConstStringA      Uri,
                                                                             OpcUa_CryptoProvider*   pProvider);
 
 /**

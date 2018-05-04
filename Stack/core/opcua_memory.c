@@ -59,9 +59,9 @@ OpcUa_Void OPCUA_DLLCALL OpcUa_Memory_Free(OpcUa_Void* a_pBuffer)
  * OpcUa_Memory_MemCpy
  *===========================================================================*/
 OpcUa_StatusCode OPCUA_DLLCALL OpcUa_Memory_MemCpy(   OpcUa_Void*     a_pBuffer,
-                                        OpcUa_UInt32    a_nSizeInBytes,
-                                        OpcUa_Void*     a_pSource,
-                                        OpcUa_UInt32    a_nCount)
+                                        	      OpcUa_UInt32    a_nSizeInBytes,
+                                        	      const OpcUa_Void*     a_pSource,
+                                        	      OpcUa_UInt32    a_nCount)
 {
 
     return OPCUA_P_MEMORY_MEMCPY(   a_pBuffer,

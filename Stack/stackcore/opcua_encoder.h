@@ -110,7 +110,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnPopNamespace)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteBoolean)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Boolean*         pValue,
     OpcUa_Int32*           pSize);
 
@@ -128,7 +128,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteBoolean)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteSByte)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_SByte*           pValue,
     OpcUa_Int32*           pSize);
 
@@ -146,7 +146,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteSByte)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteByte)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Byte*            pValue,
     OpcUa_Int32*           pSize);
 
@@ -164,7 +164,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteByte)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteInt16)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Int16*           pValue,
     OpcUa_Int32*           pSize);
 
@@ -182,7 +182,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteInt16)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteUInt16)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_UInt16*          pValue,
     OpcUa_Int32*           pSize);
 
@@ -200,7 +200,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteUInt16)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteInt32)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Int32*           pValue,
     OpcUa_Int32*           pSize);
 
@@ -218,7 +218,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteInt32)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteUInt32)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_UInt32*          pValue,
     OpcUa_Int32*           pSize);
 
@@ -236,7 +236,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteUInt32)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteInt64)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Int64*           pValue,
     OpcUa_Int32*           pSize);
 
@@ -254,7 +254,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteInt64)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteUInt64)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_UInt64*          pValue,
     OpcUa_Int32*           pSize);
 
@@ -272,7 +272,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteUInt64)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteFloat)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Float*           pValue,
     OpcUa_Int32*           pSize);
 
@@ -290,7 +290,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteFloat)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDouble)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Double*          pValue,
     OpcUa_Int32*           pSize);
 
@@ -308,7 +308,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDouble)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteString)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_String*          pValue,
     OpcUa_Int32*           pSize);
 
@@ -326,7 +326,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteString)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDateTime)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_DateTime*        pValue,
     OpcUa_Int32*           pSize);
 
@@ -344,7 +344,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDateTime)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteGuid)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Guid*            pValue,
     OpcUa_Int32*           pSize);
 
@@ -362,7 +362,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteGuid)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteByteString)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_ByteString*      pValue,
     OpcUa_Int32*           pSize);
 
@@ -380,7 +380,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteByteString)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteXmlElement)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_XmlElement*      pValue,
     OpcUa_Int32*           pSize);
 
@@ -398,7 +398,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteXmlElement)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteNodeId)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_NodeId*          pValue,
     OpcUa_Int32*           pSize);
 
@@ -416,7 +416,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteNodeId)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteExpandedNodeId)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_ExpandedNodeId*  pValue,
     OpcUa_Int32*           pSize);
 
@@ -434,7 +434,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteExpandedNodeId)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteStatusCode)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_StatusCode*      pValue,
     OpcUa_Int32*           pSize);
 
@@ -452,7 +452,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteStatusCode)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDiagnosticInfo)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_DiagnosticInfo*  pValue,
     OpcUa_Int32*           pSize);
 
@@ -470,7 +470,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDiagnosticInfo)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteLocalizedText)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_LocalizedText*   pValue,
     OpcUa_Int32*           pSize);
 
@@ -488,7 +488,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteLocalizedText)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteQualifiedName)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_QualifiedName*   pValue,
     OpcUa_Int32*           pSize);
 
@@ -506,7 +506,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteQualifiedName)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteExtensionObject)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_ExtensionObject* pValue,
     OpcUa_Int32*           pSize);
 
@@ -524,7 +524,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteExtensionObject)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDataValue)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_DataValue*       pValue,
     OpcUa_Int32*           pSize);
 
@@ -542,7 +542,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDataValue)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteVariant)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Variant*         pValue,
     OpcUa_Int32*           pSize);
 
@@ -561,7 +561,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteVariant)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteEncodeable)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Void*            pValue,
     OpcUa_EncodeableType*  pType,
     OpcUa_Int32*           pSize);
@@ -581,7 +581,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteEncodeable)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteEnumerated)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Int32*           pValue,
     OpcUa_EnumeratedType*  pType,
     OpcUa_Int32*           pSize);
@@ -601,7 +601,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteEnumerated)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteBooleanArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Boolean*         pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -621,7 +621,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteBooleanArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteSByteArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_SByte*           pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -641,7 +641,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteSByteArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteByteArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Byte*            pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -661,7 +661,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteByteArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteInt16Array)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Int16*           pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -681,7 +681,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteInt16Array)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteUInt16Array)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_UInt16*          pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -701,7 +701,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteUInt16Array)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteInt32Array)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Int32*           pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -721,7 +721,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteInt32Array)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteUInt32Array)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_UInt32*          pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -741,7 +741,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteUInt32Array)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteInt64Array)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Int64*           pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -761,7 +761,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteInt64Array)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteUInt64Array)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_UInt64*          pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -781,7 +781,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteUInt64Array)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteFloatArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Float*           pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -801,7 +801,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteFloatArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDoubleArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Double*          pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -821,7 +821,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDoubleArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteStringArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_String*          pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -841,7 +841,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteStringArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDateTimeArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_DateTime*        pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -861,7 +861,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDateTimeArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteGuidArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Guid*            pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -881,7 +881,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteGuidArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteByteStringArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_ByteString*      pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -901,7 +901,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteByteStringArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteXmlElementArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_XmlElement*      pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -921,7 +921,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteXmlElementArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteNodeIdArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_NodeId*          pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -941,7 +941,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteNodeIdArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteExpandedNodeIdArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_ExpandedNodeId*  pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -961,7 +961,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteExpandedNodeIdArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteStatusCodeArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_StatusCode*      pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -981,7 +981,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteStatusCodeArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDiagnosticInfoArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_DiagnosticInfo*  pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -1001,7 +1001,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDiagnosticInfoArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteLocalizedTextArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_LocalizedText*   pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -1021,7 +1021,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteLocalizedTextArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteQualifiedNameArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_QualifiedName*   pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -1041,7 +1041,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteQualifiedNameArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteExtensionObjectArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_ExtensionObject* pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -1061,7 +1061,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteExtensionObjectArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDataValueArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_DataValue*       pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -1081,7 +1081,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteDataValueArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteVariantArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Variant*         pArray,
     OpcUa_Int32            nCount,
     OpcUa_Int32*           pSize);
@@ -1102,7 +1102,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteVariantArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteEncodeableArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Void*            pArray,
     OpcUa_Int32            nCount,
     OpcUa_EncodeableType*  pType,
@@ -1124,7 +1124,7 @@ typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteEncodeableArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Encoder_PfnWriteEnumeratedArray)(
     struct _OpcUa_Encoder* pEncoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Int32*           pArray,
     OpcUa_Int32            nCount,
     OpcUa_EnumeratedType*  pType,

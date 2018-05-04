@@ -58,6 +58,7 @@ typedef float               OpcUa_Float;
 typedef double              OpcUa_Double;
 typedef char                OpcUa_CharA;
 typedef unsigned char       OpcUa_UCharA;
+typedef const OpcUa_CharA*  OpcUa_ConstStringA;
 typedef OpcUa_CharA*        OpcUa_StringA;
 typedef unsigned short      OpcUa_Char;
 

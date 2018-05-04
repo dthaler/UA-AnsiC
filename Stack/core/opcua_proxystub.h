@@ -127,7 +127,7 @@ OPCUA_EXPORT OpcUa_StatusCode OpcUa_ProxyStub_AddTypes(OpcUa_EncodeableType** pp
 /** Set namespace URI table.
   * @param a_psNamespaceUris [in] Array of pointers to namespace URIs with OpcUa_Null as last element.
   */
-OPCUA_EXPORT OpcUa_StatusCode OpcUa_ProxyStub_SetNamespaceUris(OpcUa_StringA* a_psNamespaceUris);
+OPCUA_EXPORT OpcUa_StatusCode OpcUa_ProxyStub_SetNamespaceUris(OpcUa_ConstStringA* a_psNamespaceUris);
 
 /*============================================================================
  * OpcUa_ProxyStub_GetVersion
@@ -135,7 +135,7 @@ OPCUA_EXPORT OpcUa_StatusCode OpcUa_ProxyStub_SetNamespaceUris(OpcUa_StringA* a_
 /** Request the version string of the proxy stub.
   * @return Pointer to a static buffer containing the version information in string format. Must not be freed!
   */
-OPCUA_EXPORT OpcUa_StringA OPCUA_DLLCALL OpcUa_ProxyStub_GetVersion();
+OPCUA_EXPORT OpcUa_ConstStringA OPCUA_DLLCALL OpcUa_ProxyStub_GetVersion();
 
 /*============================================================================
  * OpcUa_ProxyStub_GetConfigString
@@ -143,7 +143,7 @@ OPCUA_EXPORT OpcUa_StringA OPCUA_DLLCALL OpcUa_ProxyStub_GetVersion();
 /** Request the string encoded configuration table.
   * @return Pointer to a buffer containing the configuration string. Must not be freed!
   */
-OPCUA_EXPORT OpcUa_StringA OPCUA_DLLCALL OpcUa_ProxyStub_GetConfigString();
+OPCUA_EXPORT OpcUa_ConstStringA OPCUA_DLLCALL OpcUa_ProxyStub_GetConfigString();
 
 /*============================================================================
  * OpcUa_ProxyStub_GetStaticConfigString
@@ -151,7 +151,7 @@ OPCUA_EXPORT OpcUa_StringA OPCUA_DLLCALL OpcUa_ProxyStub_GetConfigString();
 /** Request the string encoded built configuration of the stack.
   * @return Pointer to a static string containing the options set by compiler switches. Must not be freed!
   */
-OPCUA_EXPORT OpcUa_StringA OPCUA_DLLCALL OpcUa_ProxyStub_GetStaticConfigString();
+OPCUA_EXPORT OpcUa_ConstStringA OPCUA_DLLCALL OpcUa_ProxyStub_GetStaticConfigString();
 
 OPCUA_END_EXTERN_C
 #endif /* _OpcUa_ProxyStub_H_ */

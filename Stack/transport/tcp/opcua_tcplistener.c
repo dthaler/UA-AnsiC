@@ -1623,7 +1623,7 @@ OpcUa_StatusCode OpcUa_TcpListener_EventCallback(
     OpcUa_UInt16    a_uPortNumber,
     OpcUa_Boolean   a_bIsSSL)
 {
-    OpcUa_StringA                   strEvent        = OpcUa_Null;
+    OpcUa_ConstStringA              strEvent        = OpcUa_Null;
     OpcUa_Listener*                 listener        = (OpcUa_Listener*)a_pUserData;
     OpcUa_TcpListener*              pTcpListener    = (OpcUa_TcpListener*)listener->Handle;
     OpcUa_TcpListener_EventHandler  fEventHandler   = OpcUa_Null;

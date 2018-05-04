@@ -112,7 +112,7 @@ OPCUA_EXPORT OpcUa_StatusCode OpcUa_Crypto_DeriveChannelKeysets(
 OpcUa_StatusCode OpcUa_Crypto_GetPublicKeyFromCert(
     struct _OpcUa_CryptoProvider*       a_pProvider,
     OpcUa_ByteString*                   a_pCertificate,
-    OpcUa_StringA                       a_password,             /* this could be optional */
+    OpcUa_ConstStringA                  a_password,             /* this could be optional */
     OpcUa_Key*                          a_pPublicKey)
 {
     OpcUa_DeclareErrorTraceModule(OpcUa_Module_Crypto);

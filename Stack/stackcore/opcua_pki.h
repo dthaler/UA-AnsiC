@@ -128,8 +128,8 @@ OPCUA_EXPORT OpcUa_StatusCode OpcUa_PKIProvider_SaveCertificate(
 */
 typedef OpcUa_StatusCode (OpcUa_PKIProvider_PfnLoadCertificate)(
     struct _OpcUa_PKIProvider*  pPKI,
-    OpcUa_Void*                 pLoadHandle,
-    OpcUa_Void*                 pCertificateStore,
+    const OpcUa_Void*           pLoadHandle,
+    const OpcUa_Void*           pCertificateStore,
     OpcUa_ByteString*           pCertificate);
 
 /**
@@ -143,8 +143,8 @@ typedef OpcUa_StatusCode (OpcUa_PKIProvider_PfnLoadCertificate)(
 */
 OPCUA_EXPORT OpcUa_StatusCode OpcUa_PKIProvider_LoadCertificate(
     struct _OpcUa_PKIProvider*  pPKI,
-    OpcUa_Void*                 pLoadHandle,
-    OpcUa_Void*                 pCertificateStore,
+    const OpcUa_Void*           pLoadHandle,
+    const OpcUa_Void*           pCertificateStore,
     OpcUa_ByteString*           pCertificate);
 
 
@@ -187,9 +187,9 @@ OPCUA_EXPORT OpcUa_StatusCode OpcUa_PKIProvider_CloseCertificateStore(
   @param pPrivateKey           [out] The private key (in DER format).
 */
 typedef OpcUa_StatusCode (OpcUa_PKIProvider_PfnLoadPrivateKeyFromFile)(
-    OpcUa_StringA               privateKeyFile,
+    OpcUa_ConstStringA          privateKeyFile,
     OpcUa_P_FileFormat          fileFormat,
-    OpcUa_StringA               password,
+    OpcUa_ConstStringA          password,
     OpcUa_UInt                  keyType,
     OpcUa_Key*                  pPrivateKey);
 

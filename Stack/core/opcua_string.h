@@ -44,7 +44,7 @@ OPCUA_BEGIN_EXTERN_C
     #define OpcUa_String_FromCString(x) ((OpcUa_String*)((x)==OpcUa_Null||(x)[0]=='\0'?OpcUa_Null:(x)))
 #else /* OPCUA_PREFERINLINE */
     OPCUA_EXPORT
-    OpcUa_String* OpcUa_String_FromCString(OpcUa_StringA strCString);
+    OpcUa_String* OpcUa_String_FromCString(OpcUa_ConstStringA strCString);
 #endif /* OPCUA_PREFERINLINE */
 
 /**
@@ -202,7 +202,7 @@ OpcUa_Int32 OpcUa_String_StrnCmp(   const OpcUa_String* pString1,
                                     OpcUa_UInt32        uLength,
                                     OpcUa_Boolean       bIgnoreCase);
 
-/** The following functions are convencience functions for easy use only and call the above API only. **/
+/** The following functions are convenience functions for easy use only and call the above API only. **/
 
 /**
  * @brief Attaches a readonly reference for a string constant to a string object.
@@ -213,7 +213,7 @@ OpcUa_Int32 OpcUa_String_StrnCmp(   const OpcUa_String* pString1,
  * @return Status code; @see opcua_statuscodes.h
  */
 OPCUA_EXPORT
-OpcUa_StatusCode OpcUa_String_AttachReadOnly(OpcUa_String* pDst, const OpcUa_StringA pSrc);
+OpcUa_StatusCode OpcUa_String_AttachReadOnly(OpcUa_String* pDst, OpcUa_ConstStringA pSrc);
 
 /**
  * @brief Attaches a copy of a string to a string object.
@@ -228,7 +228,7 @@ OpcUa_StatusCode OpcUa_String_AttachReadOnly(OpcUa_String* pDst, const OpcUa_Str
  */
 OPCUA_EXPORT
 OpcUa_StatusCode OpcUa_String_AttachCopy(   OpcUa_String*       pDst,
-                                            const OpcUa_StringA pSrc);
+                                            OpcUa_ConstStringA  pSrc);
 
 /**
  * @brief Attaches a string to a string object.

@@ -190,7 +190,7 @@ OPCUA_BEGIN_EXTERN_C
 #ifndef _INC_STDIO
 /* import prototype for direct mapping on sprintf for files which are not allowed to include
    system headers */
-OPCUA_IMPORT OpcUa_Int sprintf(OpcUa_CharA* buffer, const OpcUa_CharA* format, ...);
+OPCUA_IMPORT OpcUa_Int sprintf(OpcUa_StringA buffer, OpcUa_ConstStringA format, ...);
 #endif /* _INC_STDIO */
 
 #if OPCUA_USE_SAFE_FUNCTIONS
@@ -208,7 +208,7 @@ OPCUA_IMPORT OpcUa_Int sprintf(OpcUa_CharA* buffer, const OpcUa_CharA* format, .
 /* import prototype for direct mapping on sscanf for files which are not allowed to include
    system headers */
 #ifndef _INC_STDIO
-OPCUA_IMPORT OpcUa_Int sscanf(const OpcUa_CharA* buffer, const OpcUa_CharA* format, ... );
+OPCUA_IMPORT OpcUa_Int sscanf(OpcUa_ConstStringA buffer, OpcUa_ConstStringA format, ... );
 #endif /* _INC_STDIO */
 
 #if OPCUA_USE_SAFE_FUNCTIONS

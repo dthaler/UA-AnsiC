@@ -497,7 +497,7 @@ OpcUa_StatusCode OpcUa_P_OpenSSL_X509_SelfSigned_Custom_Create(
 OpcUa_StatusCode OpcUa_P_OpenSSL_X509_GetPublicKey(
     OpcUa_CryptoProvider*       pProvider,
     OpcUa_ByteString*           pCertificate,
-    OpcUa_StringA               password,
+    OpcUa_ConstStringA          password,
     OpcUa_Key*                  pPublicKey);
 
 /**
@@ -550,7 +550,7 @@ OpcUa_StatusCode OpcUa_P_Crypto_NoSecurity_CreateCertificate(
 OpcUa_StatusCode OpcUa_P_Crypto_NoSecurity_GetPublicKeyFromCert(
     OpcUa_CryptoProvider*       pProvider,
     OpcUa_ByteString*           pCertificate,
-    OpcUa_StringA               password,
+    OpcUa_ConstStringA          password,
     OpcUa_Key*                  pPublicKey);
 
 /**

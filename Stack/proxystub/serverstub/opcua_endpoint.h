@@ -236,7 +236,7 @@ OpcUa_StatusCode OpcUa_Endpoint_GetMessageSecureChannelSecurityPolicy(
 OPCUA_EXPORT
 OpcUa_StatusCode OpcUa_Endpoint_Open(
     OpcUa_Endpoint                              hEndpoint,
-    OpcUa_StringA                               sUrl,
+    OpcUa_ConstStringA                          sUrl,
     OpcUa_Boolean                               bListenOnAllInterfaces,
     OpcUa_Endpoint_PfnEndpointCallback*         pfEndpointCallback,
     OpcUa_Void*                                 pvEndpointCallbackData,

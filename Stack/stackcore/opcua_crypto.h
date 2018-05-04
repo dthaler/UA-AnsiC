@@ -346,7 +346,7 @@ OPCUA_EXPORT OpcUa_StatusCode OpcUa_Crypto_DeriveChannelKeysets(
 typedef OpcUa_StatusCode (OpcUa_Crypto_PfnGetPublicKeyFromCert)(
     struct _OpcUa_CryptoProvider*       pProvider,
     OpcUa_ByteString*                   pCertificate,
-    OpcUa_StringA                       password,             /* this could be optional */
+    OpcUa_ConstStringA                  password,             /* this could be optional */
     OpcUa_Key*                          pPublicKey);
 
 /**
@@ -363,7 +363,7 @@ typedef OpcUa_StatusCode (OpcUa_Crypto_PfnGetPublicKeyFromCert)(
 OPCUA_EXPORT OpcUa_StatusCode OpcUa_Crypto_GetPublicKeyFromCert(
     struct _OpcUa_CryptoProvider*       pProvider,
     OpcUa_ByteString*                   pCertificate,
-    OpcUa_StringA                       password,             /* this could be optional */
+    OpcUa_ConstStringA                  password,             /* this could be optional */
     OpcUa_Key*                          pPublicKey);
 
 /**

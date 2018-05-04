@@ -132,9 +132,9 @@ OpcUa_StatusCode OpcUa_P_RawSocket_Shutdown(OpcUa_RawSocket RawSocket,
  * @return A "Good" status code if no error occurred, a "Bad" status code otherwise.
  *         OpcUa_BadWouldBlock should not be handled as error, if non blocking sockets are used.
  */
-OpcUa_StatusCode OpcUa_P_RawSocket_Connect( OpcUa_RawSocket RawSocket,
-                                            OpcUa_Int16     Port,
-                                            OpcUa_StringA   Host);
+OpcUa_StatusCode OpcUa_P_RawSocket_Connect( OpcUa_RawSocket    RawSocket,
+                                            OpcUa_Int16        Port,
+                                            OpcUa_ConstStringA Host);
 
 /*!
  * @brief Connect the given IPv6 socket to the specified address.
@@ -146,9 +146,9 @@ OpcUa_StatusCode OpcUa_P_RawSocket_Connect( OpcUa_RawSocket RawSocket,
  * @return A "Good" status code if no error occurred, a "Bad" status code otherwise.
  *         OpcUa_BadWouldBlock should not be handled as error, if non blocking sockets are used.
  */
-OpcUa_StatusCode OpcUa_P_RawSocket_ConnectV6( OpcUa_RawSocket RawSocket,
-                                              OpcUa_Int16     Port,
-                                              OpcUa_StringA   Host);
+OpcUa_StatusCode OpcUa_P_RawSocket_ConnectV6( OpcUa_RawSocket    RawSocket,
+                                              OpcUa_Int16        Port,
+                                              OpcUa_ConstStringA Host);
 
 /*!
  * @brief Bind the given system socket to all network interfaces.
@@ -170,9 +170,9 @@ OpcUa_StatusCode OpcUa_P_RawSocket_Bind(OpcUa_RawSocket RawSocket,
  *
  * @return A "Good" status code if no error occurred, a "Bad" status code otherwise.
  */
-OpcUa_StatusCode OpcUa_P_RawSocket_BindEx(OpcUa_RawSocket RawSocket,
-                                          OpcUa_StringA   IpAddress,
-                                          OpcUa_Int16     Port);
+OpcUa_StatusCode OpcUa_P_RawSocket_BindEx(OpcUa_RawSocket    RawSocket,
+                                          OpcUa_ConstStringA IpAddress,
+                                          OpcUa_Int16        Port);
 
 /*!
  * @brief Bind the given IPv6 socket to the specified network interface.
@@ -183,9 +183,9 @@ OpcUa_StatusCode OpcUa_P_RawSocket_BindEx(OpcUa_RawSocket RawSocket,
  *
  * @return A "Good" status code if no error occurred, a "Bad" status code otherwise.
  */
-OpcUa_StatusCode OpcUa_P_RawSocket_BindV6(OpcUa_RawSocket RawSocket,
-                                          OpcUa_StringA   IpAddress,
-                                          OpcUa_Int16     Port);
+OpcUa_StatusCode OpcUa_P_RawSocket_BindV6(OpcUa_RawSocket    RawSocket,
+                                          OpcUa_ConstStringA IpAddress,
+                                          OpcUa_Int16        Port);
 
 /*!
  * @brief Start listening on the given system socket.
@@ -240,9 +240,9 @@ OpcUa_Int32 OpcUa_P_RawSocket_Read( OpcUa_RawSocket RawSocket,
  *
  * @return The number of bytes written, a OPCUA_P_SOCKET_SOCKETERROR
  */
-OpcUa_Int32 OpcUa_P_RawSocket_Write(OpcUa_RawSocket RawSocket,
-                                    OpcUa_Byte*     Buffer,
-                                    OpcUa_UInt32    BufferSize);
+OpcUa_Int32 OpcUa_P_RawSocket_Write(OpcUa_RawSocket   RawSocket,
+                                    const OpcUa_Byte* Buffer,
+                                    OpcUa_UInt32      BufferSize);
 
 /*!
  * @brief Set the system socket to non-blocking or mode.
@@ -384,6 +384,6 @@ OpcUa_StatusCode OpcUa_P_RawSocket_CreateSocketPair(  OpcUa_RawSocket* pRawSocke
                                                       OpcUa_RawSocket* pRawSocketWrite);
 
 
-OpcUa_UInt32 OpcUa_P_RawSocket_InetAddr(    OpcUa_StringA   sRemoteAddress);
+OpcUa_UInt32 OpcUa_P_RawSocket_InetAddr(    OpcUa_ConstStringA   sRemoteAddress);
 
 #endif /* _OpcUa_P_Socket_H_ */

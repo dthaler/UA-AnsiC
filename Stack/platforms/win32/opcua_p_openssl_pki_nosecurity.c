@@ -99,8 +99,8 @@ OpcUa_StatusCode OpcUa_P_OpenSSL_PKI_NoSecurity_SaveCertificate(
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_P_OpenSSL_PKI_NoSecurity_LoadCertificate(
     OpcUa_PKIProvider*          a_pProvider,
-    OpcUa_Void*                 a_pLoadHandle,
-    OpcUa_Void*                 a_pCertificateStore,
+    const OpcUa_Void*           a_pLoadHandle,
+    const OpcUa_Void*           a_pCertificateStore,
     OpcUa_ByteString*           a_pCertificate)
 {
     OpcUa_ReferenceParameter(a_pProvider);
@@ -115,9 +115,9 @@ OpcUa_StatusCode OpcUa_P_OpenSSL_PKI_NoSecurity_LoadCertificate(
  * OpcUa_P_OpenSSL_PKI_NoSecurity_LoadCertificate
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_P_OpenSSL_PKI_NoSecurity_LoadPrivateKeyFromFile(
-    OpcUa_StringA               a_privateKeyFile,
+    OpcUa_ConstStringA          a_privateKeyFile,
     OpcUa_P_FileFormat          a_fileFormat,
-    OpcUa_StringA               a_password,
+    OpcUa_ConstStringA          a_password,
     OpcUa_UInt                  a_keyType,
     OpcUa_Key*                  a_pPrivateKey)
 {

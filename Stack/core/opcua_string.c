@@ -48,7 +48,7 @@ typedef struct _OpcUa_StringInternal
 * Cast a C string into a OpcUa_String.
 *===========================================================================*/
 #if !OPCUA_PREFERINLINE
-    OpcUa_String* OpcUa_String_FromCString( OpcUa_StringA   a_strCString )
+    OpcUa_String* OpcUa_String_FromCString( OpcUa_ConstStringA   a_strCString )
     {
         if(a_strCString == OpcUa_Null)
         {
@@ -682,10 +682,10 @@ OpcUa_Int32 OpcUa_String_StrnCmp(   const OpcUa_String* a_pLeftString,
 /*============================================================================
  * OpcUa_String_AttachReadOnly
  *===========================================================================*/
-OpcUa_StatusCode OpcUa_String_AttachReadOnly(OpcUa_String* a_pDst, const OpcUa_StringA a_pSrc)
+OpcUa_StatusCode OpcUa_String_AttachReadOnly(OpcUa_String* a_pDst, OpcUa_ConstStringA a_pSrc)
 {
     OpcUa_StatusCode uStatus = OpcUa_String_AttachToString(
-        a_pSrc,
+        (OpcUa_StringA)a_pSrc,
         OPCUA_STRINGLENZEROTERMINATED,
         0,
         OpcUa_False,  /* attach the source without copying */
@@ -698,10 +698,10 @@ OpcUa_StatusCode OpcUa_String_AttachReadOnly(OpcUa_String* a_pDst, const OpcUa_S
 /*============================================================================
  * OpcUa_String_AttachCopy
  *===========================================================================*/
-OpcUa_StatusCode OpcUa_String_AttachCopy(OpcUa_String* a_pDst, const OpcUa_StringA a_pSrc)
+OpcUa_StatusCode OpcUa_String_AttachCopy(OpcUa_String* a_pDst, OpcUa_ConstStringA a_pSrc)
 {
     OpcUa_StatusCode uStatus = OpcUa_String_AttachToString(
-        a_pSrc,
+        (OpcUa_StringA)a_pSrc,
         OPCUA_STRINGLENZEROTERMINATED,
         0,
         OpcUa_True, /* copy the given string */

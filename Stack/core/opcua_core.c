@@ -202,7 +202,7 @@ OpcUa_StatusCode OPCUA_DLLCALL OpcUa_PKIProvider_Delete(    OpcUa_PKIProvider*  
 }
 
 /*********************************************************************************/
-OpcUa_StatusCode OPCUA_DLLCALL OpcUa_CryptoProvider_Create( OpcUa_StringA           a_psSecurityProfileUri,
+OpcUa_StatusCode OPCUA_DLLCALL OpcUa_CryptoProvider_Create( OpcUa_ConstStringA      a_psSecurityProfileUri,
                                                             OpcUa_CryptoProvider*   a_pProvider)
 {
     return OPCUA_P_CRYPTOFACTORY_CREATECRYPTOPROVIDER(  a_psSecurityProfileUri,
@@ -241,7 +241,7 @@ OpcUa_StatusCode OPCUA_DLLCALL OpcUa_OpenSSLSeedPRNG(   OpcUa_Byte*  a_pEntropy,
 
 OpcUa_Int32 OPCUA_DLLCALL OpcUa_StringA_vsnprintf(  OpcUa_StringA               a_sDest,
                                                     OpcUa_UInt32                a_uCount,
-                                                    const OpcUa_StringA         a_sFormat,
+                                                    OpcUa_ConstStringA          a_sFormat,
                                                     varg_list                   a_argptr)
 {
     return OpcUa_ProxyStub_g_PlatformLayerCalltable->StrVsnPrintf(  a_sDest,
@@ -252,7 +252,7 @@ OpcUa_Int32 OPCUA_DLLCALL OpcUa_StringA_vsnprintf(  OpcUa_StringA               
 
 OpcUa_Int32 OPCUA_DLLCALL OpcUa_StringA_snprintf(   OpcUa_StringA               a_sDest,
                                                     OpcUa_UInt32                a_uCount,
-                                                    const OpcUa_StringA         a_sFormat,
+                                                    OpcUa_ConstStringA          a_sFormat,
                                                     ...)
 {
         OpcUa_Int32 ret = 0;

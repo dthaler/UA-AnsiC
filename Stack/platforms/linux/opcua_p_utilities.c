@@ -99,7 +99,7 @@ OpcUa_UInt32 OPCUA_DLLCALL OpcUa_P_GetTickCount()
 /*============================================================================
  * OpcUa_CharAToInt
  *===========================================================================*/
-OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_CharAToInt(OpcUa_StringA sValue)
+OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_CharAToInt(OpcUa_ConstStringA sValue)
 {
     return (OpcUa_Int32)atoi(sValue);
 }
@@ -107,16 +107,16 @@ OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_CharAToInt(OpcUa_StringA sValue)
 /*============================================================================
  * OpcUa_P_ParseUrl
  *===========================================================================*/
-OpcUa_StatusCode OpcUa_P_ParseUrl(  OpcUa_StringA   a_psUrl,
-                                    OpcUa_StringA*  a_psIpAddress,
-                                    OpcUa_UInt16*   a_puPort)
+OpcUa_StatusCode OpcUa_P_ParseUrl(  OpcUa_ConstStringA   a_psUrl,
+                                    OpcUa_StringA*       a_psIpAddress,
+                                    OpcUa_UInt16*        a_puPort)
 {
     OpcUa_StringA       sHostName         = OpcUa_Null;
     OpcUa_UInt32        uHostNameLength   = 0;
 
-    OpcUa_CharA*        sPort             = OpcUa_Null;
+    OpcUa_ConstStringA  sPort             = OpcUa_Null;
 
-    OpcUa_CharA*        pcCursor;
+    OpcUa_ConstStringA  pcCursor;
 
     OpcUa_Int           nIndex1           = 0;
     OpcUa_Int           nIpStart;

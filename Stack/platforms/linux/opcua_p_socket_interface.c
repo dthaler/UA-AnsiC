@@ -546,7 +546,7 @@ OpcUa_FinishErrorHandling;
  * Create a server socket
  *===========================================================================*/
 OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_SocketManager_CreateServer(  OpcUa_SocketManager         a_pSocketManager,
-                                                                    OpcUa_StringA               a_sAddress,
+                                                                    OpcUa_ConstStringA          a_sAddress,
                                                                     OpcUa_Boolean               a_bListenOnAllInterfaces,
                                                                     OpcUa_Socket_EventCallback  a_pfnSocketCallBack,
                                                                     OpcUa_Void*                 a_pCallbackData,
@@ -618,7 +618,7 @@ OpcUa_FinishErrorHandling;
  * Create a client socket
  *===========================================================================*/
 OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_SocketManager_CreateClient(  OpcUa_SocketManager         a_hSocketManager,
-                                                                    OpcUa_StringA               a_sRemoteAddress,
+                                                                    OpcUa_ConstStringA          a_sRemoteAddress,
                                                                     OpcUa_UInt16                a_uLocalPort,
                                                                     OpcUa_Socket_EventCallback  a_pfnSocketCallBack,
                                                                     OpcUa_Void*                 a_pCallbackData,
@@ -817,7 +817,7 @@ OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_Socket_GetPeerInfo(  OpcUa_Socket a_pSock
 /*============================================================================
  * Convert OpcUa_StringA into binary ip address
  *===========================================================================*/
-OpcUa_UInt32 OPCUA_DLLCALL OpcUa_P_Socket_InetAddr(OpcUa_StringA a_sRemoteAddress)
+OpcUa_UInt32 OPCUA_DLLCALL OpcUa_P_Socket_InetAddr(OpcUa_ConstStringA a_sRemoteAddress)
 {
     return OpcUa_P_RawSocket_InetAddr(a_sRemoteAddress);
 }

@@ -59,10 +59,10 @@
  *===========================================================================*/
 static
 #ifdef _WIN32_WCE
-OpcUa_StatusCode OpcUa_P_OpenSSL_BuildFullPath( /*  in */ char*         a_pPath,
-                                                /*  in */ wchar_t*      a_wpFileName,
-                                                /*  in */ unsigned int  a_uiFullPathBufferLength,
-                                                /* out */ char*         a_pFullPath)
+OpcUa_StatusCode OpcUa_P_OpenSSL_BuildFullPath( /*  in */ const char*    a_pPath,
+                                                /*  in */ const wchar_t* a_wpFileName,
+                                                /*  in */ unsigned int   a_uiFullPathBufferLength,
+                                                /* out */ char*          a_pFullPath)
 {
     char         a_pFileName[MAX_PATH];
     unsigned int uiPathLength;
@@ -78,8 +78,8 @@ OpcUa_StatusCode OpcUa_P_OpenSSL_BuildFullPath( /*  in */ char*         a_pPath,
         }
     }
 #else /* _WIN32_WCE */
-OpcUa_StatusCode OpcUa_P_OpenSSL_BuildFullPath( /*  in */ char*         a_pPath,
-                                                /*  in */ char*         a_pFileName,
+OpcUa_StatusCode OpcUa_P_OpenSSL_BuildFullPath( /*  in */ const char*   a_pPath,
+                                                /*  in */ const char*   a_pFileName,
                                                 /*  in */ unsigned int  a_uiFullPathBufferLength,
                                                 /* out */ char*         a_pFullPath)
 {
@@ -809,8 +809,8 @@ OpcUa_FinishErrorHandling;
 */
 OpcUa_StatusCode OpcUa_P_OpenSSL_PKI_LoadCertificate(
     OpcUa_PKIProvider*          a_pProvider,
-    OpcUa_Void*                 a_pLoadHandle,
-    OpcUa_Void*                 a_pCertificateStore,
+    const OpcUa_Void*           a_pLoadHandle,
+    const OpcUa_Void*           a_pCertificateStore,
     OpcUa_ByteString*           a_pCertificate)
 {
     OpcUa_Byte*     buf                 = OpcUa_Null;
@@ -889,9 +889,9 @@ OpcUa_FinishErrorHandling;
  * OpcUa_P_OpenSSL_PKI_LoadPrivateKeyFromFile
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_P_OpenSSL_PKI_LoadPrivateKeyFromFile(
-    OpcUa_StringA           a_privateKeyFile,
+    OpcUa_ConstStringA      a_privateKeyFile,
     OpcUa_P_FileFormat      a_fileFormat,
-    OpcUa_StringA           a_password,         /* optional: just needed encrypted PEM */
+    OpcUa_ConstStringA      a_password,         /* optional: just needed encrypted PEM */
     OpcUa_UInt              a_keyType,
     OpcUa_Key*              a_pPrivateKey)
 {
@@ -912,7 +912,7 @@ OpcUa_InitializeStatus(OpcUa_Module_P_OpenSSL, "PKI_LoadPrivateKeyFromFile");
     }
 
     /* open file */
-    pPrivateKeyFile = BIO_new_file((const char*)a_privateKeyFile, "rb");
+    pPrivateKeyFile = BIO_new_file(a_privateKeyFile, "rb");
     OpcUa_ReturnErrorIfArgumentNull(pPrivateKeyFile);
 
     /* read and convert file */
@@ -921,10 +921,10 @@ OpcUa_InitializeStatus(OpcUa_Module_P_OpenSSL, "PKI_LoadPrivateKeyFromFile");
     case OpcUa_Crypto_Encoding_PEM:
         {
             /* read from file */
-            pEvpKey = PEM_read_bio_PrivateKey(  pPrivateKeyFile,    /* file                 */
-                                                NULL,               /* key struct           */
-                                                0,                  /* password callback    */
-                                                a_password);        /* default passphrase or arbitrary handle */
+            pEvpKey = PEM_read_bio_PrivateKey(  pPrivateKeyFile,            /* file                 */
+                                                NULL,                       /* key struct           */
+                                                0,                          /* password callback    */
+                                                (OpcUa_StringA)a_password); /* default passphrase or arbitrary handle */
             break;
         }
     case OpcUa_Crypto_Encoding_PKCS12:

@@ -330,9 +330,9 @@ OpcUa_StatusCode OpcUa_P_RawSocket_CreateSocketPair(  OpcUa_RawSocket* pRawSocke
 /*============================================================================
  * Connect Socket for Client.
  *===========================================================================*/
-OpcUa_StatusCode OpcUa_P_RawSocket_Connect( OpcUa_RawSocket a_RawSocket,
-                                            OpcUa_Int16     a_nPort,
-                                            OpcUa_StringA   a_sHost)
+OpcUa_StatusCode OpcUa_P_RawSocket_Connect( OpcUa_RawSocket    a_RawSocket,
+                                            OpcUa_Int16        a_nPort,
+                                            OpcUa_ConstStringA a_sHost)
 {
     socklen_t           intSize;
     int                 linSocket = OPCUA_P_SOCKET_INVALID;
@@ -392,9 +392,9 @@ OpcUa_FinishErrorHandling;
 /*============================================================================
  * Connect IPv6 Socket for Client.
  *===========================================================================*/
-OpcUa_StatusCode OpcUa_P_RawSocket_ConnectV6( OpcUa_RawSocket a_RawSocket,
-                                              OpcUa_Int16     a_nPort,
-                                              OpcUa_StringA   a_sHost)
+OpcUa_StatusCode OpcUa_P_RawSocket_ConnectV6( OpcUa_RawSocket    a_RawSocket,
+                                              OpcUa_Int16        a_nPort,
+                                              OpcUa_ConstStringA a_sHost)
 {
     socklen_t           intSize;
     int                 linSocket = OPCUA_P_SOCKET_INVALID;
@@ -502,9 +502,9 @@ OpcUa_FinishErrorHandling;
 /*============================================================================
  * Bind to Socket to a specific adapter
  *===========================================================================*/
-OpcUa_StatusCode OpcUa_P_RawSocket_BindEx(  OpcUa_RawSocket a_RawSocket,
-                                            OpcUa_StringA   a_IpAddress,
-                                            OpcUa_Int16     a_nPort)
+OpcUa_StatusCode OpcUa_P_RawSocket_BindEx(  OpcUa_RawSocket    a_RawSocket,
+                                            OpcUa_ConstStringA a_IpAddress,
+                                            OpcUa_Int16        a_nPort)
 {
     socklen_t           intSize;
     int                 linSocket  = OPCUA_P_SOCKET_INVALID;
@@ -545,9 +545,9 @@ OpcUa_FinishErrorHandling;
 /*============================================================================
  * Bind to Socket to a specific adapter
  *===========================================================================*/
-OpcUa_StatusCode OpcUa_P_RawSocket_BindV6(  OpcUa_RawSocket a_RawSocket,
-                                            OpcUa_StringA   a_IpAddress,
-                                            OpcUa_Int16     a_nPort)
+OpcUa_StatusCode OpcUa_P_RawSocket_BindV6(  OpcUa_RawSocket    a_RawSocket,
+                                            OpcUa_ConstStringA a_IpAddress,
+                                            OpcUa_Int16        a_nPort)
 {
     socklen_t           intSize;
     int                 linSocket  = OPCUA_P_SOCKET_INVALID;
@@ -724,9 +724,9 @@ OpcUa_Int32 OpcUa_P_RawSocket_Read( OpcUa_RawSocket a_RawSocket,
 /*============================================================================
  * Write Socket.
  *===========================================================================*/
-OpcUa_Int32 OpcUa_P_RawSocket_Write(    OpcUa_RawSocket a_RawSocket,
-                                        OpcUa_Byte*     a_pBuffer,
-                                        OpcUa_UInt32    a_uBufferSize)
+OpcUa_Int32 OpcUa_P_RawSocket_Write(    OpcUa_RawSocket   a_RawSocket,
+                                        const OpcUa_Byte* a_pBuffer,
+                                        OpcUa_UInt32      a_uBufferSize)
 {
     ssize_t   intBytesSend;
 
@@ -985,7 +985,7 @@ OpcUa_Int32 OpcUa_P_RawSocket_GetLastError( OpcUa_RawSocket a_RawSocket)
 /*============================================================================
  * Initialize the platform network interface
  *===========================================================================*/
-OpcUa_UInt32 OpcUa_P_RawSocket_InetAddr(OpcUa_StringA sRemoteAddress)
+OpcUa_UInt32 OpcUa_P_RawSocket_InetAddr(OpcUa_ConstStringA sRemoteAddress)
 {
     if(sRemoteAddress != OpcUa_Null)
     {

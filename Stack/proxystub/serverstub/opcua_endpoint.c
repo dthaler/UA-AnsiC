@@ -436,7 +436,7 @@ OpcUa_StatusCode OpcUa_Endpoint_OnSecureChannelEvent(   OpcUa_UInt32            
  * OpcUa_Endpoint_Open
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_Endpoint_Open(   OpcUa_Endpoint                              a_hEndpoint,
-                                        OpcUa_StringA                               a_sUrl,
+                                        OpcUa_ConstStringA                          a_sUrl,
                                         OpcUa_Boolean                               a_bListenOnAllInterfaces,
                                         OpcUa_Endpoint_PfnEndpointCallback*         a_pfEndpointCallback,
                                         OpcUa_Void*                                 a_pvEndpointCallbackData,
@@ -460,7 +460,7 @@ OpcUa_InitializeStatus(OpcUa_Module_Endpoint, "Open");
     pEndpointInt->State = eOpcUa_Endpoint_State_Open;
 
     /* attach the given url to the endpoint (make copy) */
-    uStatus = OpcUa_String_AttachToString(    a_sUrl,
+    uStatus = OpcUa_String_AttachToString(    (OpcUa_StringA)a_sUrl,
                                               OPCUA_STRINGLENZEROTERMINATED,
                                               0,
                                               OpcUa_True,

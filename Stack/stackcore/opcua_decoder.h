@@ -99,7 +99,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnPopNamespace)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadBoolean)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Boolean*         pValue);
 
 /**
@@ -111,7 +111,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadBoolean)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadSByte)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_SByte*           pValue);
 
 /**
@@ -123,7 +123,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadSByte)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadByte)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Byte*            pValue);
 
 /**
@@ -135,7 +135,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadByte)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadInt16)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Int16*           pValue);
 
 /**
@@ -147,7 +147,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadInt16)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadUInt16)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_UInt16*          pValue);
 
 /**
@@ -159,7 +159,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadUInt16)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadInt32)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Int32*           pValue);
 
 /**
@@ -171,7 +171,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadInt32)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadUInt32)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_UInt32*          pValue);
 
 /**
@@ -183,7 +183,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadUInt32)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadInt64)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Int64*           pValue);
 
 /**
@@ -195,7 +195,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadInt64)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadUInt64)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_UInt64*          pValue);
 
 /**
@@ -207,7 +207,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadUInt64)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadFloat)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Float*           pValue);
 
 /**
@@ -219,7 +219,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadFloat)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDouble)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Double*          pValue);
 
 /**
@@ -231,7 +231,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDouble)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadString)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_String*          pValue);
 
 /**
@@ -243,7 +243,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadString)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDateTime)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_DateTime*        pValue);
 
 /**
@@ -255,7 +255,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDateTime)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadGuid)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Guid*            pValue);
 
 /**
@@ -267,7 +267,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadGuid)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadByteString)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_ByteString*      pValue);
 
 /**
@@ -279,7 +279,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadByteString)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadXmlElement)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_XmlElement*      pValue);
 
 /**
@@ -291,7 +291,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadXmlElement)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadNodeId)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_NodeId*          pValue);
 
 /**
@@ -303,7 +303,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadNodeId)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadExpandedNodeId)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_ExpandedNodeId*  pValue);
 
 /**
@@ -315,7 +315,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadExpandedNodeId)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadStatusCode)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_StatusCode*      pValue);
 
 /**
@@ -327,7 +327,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadStatusCode)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDiagnosticInfo)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_DiagnosticInfo*  pValue);
 
 /**
@@ -339,7 +339,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDiagnosticInfo)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadLocalizedText)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_LocalizedText*   pValue);
 
 /**
@@ -351,7 +351,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadLocalizedText)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadQualifiedName)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_QualifiedName*   pValue);
 
 /**
@@ -363,7 +363,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadQualifiedName)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadExtensionObject)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_ExtensionObject* pValue);
 
 /**
@@ -375,7 +375,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadExtensionObject)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDataValue)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_DataValue*       pValue);
 
 /**
@@ -387,7 +387,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDataValue)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadVariant)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Variant*         pValue);
 
 /**
@@ -400,7 +400,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadVariant)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadEncodeable)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_EncodeableType*  pType,
     OpcUa_Void*            pValue);
 
@@ -414,7 +414,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadEncodeable)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadEnumerated)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_EnumeratedType*  pType,
     OpcUa_Int32*           pValue);
 
@@ -428,7 +428,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadEnumerated)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadBooleanArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Boolean**        ppArray,
     OpcUa_Int32*           pCount);
 
@@ -442,7 +442,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadBooleanArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadSByteArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_SByte**          ppArray,
     OpcUa_Int32*           pCount);
 
@@ -456,7 +456,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadSByteArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadByteArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Byte**           ppArray,
     OpcUa_Int32*           pCount);
 
@@ -470,7 +470,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadByteArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadInt16Array)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Int16**          ppArray,
     OpcUa_Int32*           pCount);
 
@@ -484,7 +484,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadInt16Array)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadUInt16Array)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_UInt16**         ppArray,
     OpcUa_Int32*           pCount);
 
@@ -498,7 +498,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadUInt16Array)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadInt32Array)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Int32**          ppArray,
     OpcUa_Int32*           pCount);
 
@@ -512,7 +512,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadInt32Array)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadUInt32Array)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_UInt32**         ppArray,
     OpcUa_Int32*           pCount);
 
@@ -526,7 +526,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadUInt32Array)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadInt64Array)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Int64**          ppArray,
     OpcUa_Int32*           pCount);
 
@@ -540,7 +540,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadInt64Array)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadUInt64Array)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_UInt64**         ppArray,
     OpcUa_Int32*           pCount);
 
@@ -554,7 +554,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadUInt64Array)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadFloatArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Float**          ppArray,
     OpcUa_Int32*           pCount);
 
@@ -568,7 +568,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadFloatArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDoubleArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Double**         ppArray,
     OpcUa_Int32*           pCount);
 
@@ -582,7 +582,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDoubleArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadStringArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_String**         ppArray,
     OpcUa_Int32*           pCount);
 
@@ -596,7 +596,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadStringArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDateTimeArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_DateTime**       ppArray,
     OpcUa_Int32*           pCount);
 
@@ -610,7 +610,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDateTimeArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadGuidArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Guid**           ppArray,
     OpcUa_Int32*           pCount);
 
@@ -624,7 +624,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadGuidArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadByteStringArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_ByteString**     ppArray,
     OpcUa_Int32*           pCount);
 
@@ -638,7 +638,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadByteStringArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadXmlElementArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_XmlElement**     ppArray,
     OpcUa_Int32*           pCount);
 
@@ -652,7 +652,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadXmlElementArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadNodeIdArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_NodeId**         ppArray,
     OpcUa_Int32*           pCount);
 
@@ -666,7 +666,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadNodeIdArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadExpandedNodeIdArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_ExpandedNodeId** ppArray,
     OpcUa_Int32*           pCount);
 
@@ -680,7 +680,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadExpandedNodeIdArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadStatusCodeArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_StatusCode**     ppArray,
     OpcUa_Int32*           pCount);
 
@@ -694,7 +694,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadStatusCodeArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDiagnosticInfoArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_DiagnosticInfo** ppArray,
     OpcUa_Int32*           pCount);
 
@@ -708,7 +708,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDiagnosticInfoArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadLocalizedTextArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_LocalizedText**  ppArray,
     OpcUa_Int32*           pCount);
 
@@ -722,7 +722,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadLocalizedTextArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadQualifiedNameArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_QualifiedName**  ppArray,
     OpcUa_Int32*           pCount);
 /**
@@ -735,7 +735,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadQualifiedNameArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadExtensionObjectArray)(
     struct _OpcUa_Decoder*  pDecoder,
-    OpcUa_StringA           sFieldName,
+    OpcUa_ConstStringA      sFieldName,
     OpcUa_ExtensionObject** ppArray,
     OpcUa_Int32*            pCount);
 
@@ -750,7 +750,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadExtensionObjectArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDataValueArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_DataValue**      ppArray,
     OpcUa_Int32*           pCount);
 
@@ -764,7 +764,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadDataValueArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadVariantArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_Variant**        ppArray,
     OpcUa_Int32*           pCount);
 
@@ -779,7 +779,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadVariantArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadEncodeableArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_EncodeableType*  pType,
     OpcUa_Void**           ppArray,
     OpcUa_Int32*           pCount);
@@ -795,7 +795,7 @@ typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadEncodeableArray)(
 */
 typedef OpcUa_StatusCode (OpcUa_Decoder_PfnReadEnumeratedArray)(
     struct _OpcUa_Decoder* pDecoder,
-    OpcUa_StringA          sFieldName,
+    OpcUa_ConstStringA     sFieldName,
     OpcUa_EnumeratedType*  pType,
     OpcUa_Int32**          ppArray,
     OpcUa_Int32*           pCount);

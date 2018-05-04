@@ -80,12 +80,12 @@ OpcUa_UInt32 OpcUa_P_Win32_OpcUaPkiFlags2Win32PkiFlags(OpcUa_UInt32 opcUaFlags)
 /*============================================================================
  * OpcUa_P_Win32_MultiByteToWideChar
  *===========================================================================*/
-static OpcUa_Char* OpcUa_P_Win32_MultiByteToWideChar(OpcUa_StringA a_sSrc)
+static OpcUa_Char* OpcUa_P_Win32_MultiByteToWideChar(OpcUa_ConstStringA a_sSrc)
 {
     int iLength = 0;
     int iResult = 0;
     OpcUa_UInt32 uSize = 0;
-    OpcUa_CharA* pData = OpcUa_Null;
+    OpcUa_ConstStringA pData = OpcUa_Null;
     OpcUa_Char* pUnicode = OpcUa_Null;
 
     if (a_sSrc == OpcUa_Null)
@@ -563,9 +563,9 @@ OpcUa_FinishErrorHandling;
  * Internet -> Inhalte -> Zertifikate... -> Eigene Zertifikate -> Importieren...
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_P_Win32_LoadPrivateKeyFromKeyStore(
-    OpcUa_StringA           a_privateKeyFile,
+    OpcUa_ConstStringA      a_privateKeyFile,
     OpcUa_P_FileFormat      a_fileFormat,       /* Not used */
-    OpcUa_StringA           a_password,         /* Not used */
+    OpcUa_ConstStringA      a_password,         /* Not used */
     OpcUa_UInt              a_keyType,          /* Not used */
     OpcUa_Key*              a_pPrivateKey)
 {

@@ -64,5 +64,5 @@ OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_DateTime_GetStringFromDateTime(  OpcUa_Da
  *
  * @return Status Code.
  */
-OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_DateTime_GetDateTimeFromString(  OpcUa_StringA   DateTimeString,
-                                                                        OpcUa_DateTime* DateTime);
+OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_DateTime_GetDateTimeFromString(  OpcUa_ConstStringA DateTimeString,
+                                                                        OpcUa_DateTime*    DateTime);

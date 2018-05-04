@@ -355,7 +355,7 @@ OpcUa_FinishErrorHandling;
  * OpcUa_Channel_BeginInvokeService
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_Channel_BeginInvokeService(  OpcUa_Channel                     a_hChannel,
-                                                    OpcUa_StringA                     a_sName,
+                                                    OpcUa_ConstStringA                a_sName,
                                                     OpcUa_Void*                       a_pRequest,
                                                     OpcUa_EncodeableType*             a_pRequestType,
                                                     OpcUa_Channel_PfnRequestComplete* a_pCallback,
@@ -473,7 +473,7 @@ OpcUa_FinishErrorHandling;
 /* Main service invoke for synchronous behaviour; this function blocks until */
 /* the server sends a response for this request.                             */
 OpcUa_StatusCode OpcUa_Channel_InvokeService(   OpcUa_Channel           a_pChannel,
-                                                OpcUa_StringA           a_sName,
+                                                OpcUa_ConstStringA      a_sName,
                                                 OpcUa_Void*             a_pRequest,
                                                 OpcUa_EncodeableType*   a_pRequestType,
                                                 OpcUa_Void**            a_ppResponse,
@@ -920,7 +920,7 @@ static OpcUa_StatusCode OpcUa_Channel_InternalConnectComplete(  OpcUa_Channel   
  *===========================================================================*/
 /* initiates an asynchronous connect process */
 OpcUa_StatusCode OpcUa_Channel_BeginConnect(OpcUa_Channel                               a_pChannel,
-                                            OpcUa_StringA                               a_sUrl,
+                                            OpcUa_ConstStringA                          a_sUrl,
                                             OpcUa_ByteString*                           a_pClientCertificate,
                                             OpcUa_Key*                                  a_pClientPrivateKey,
                                             OpcUa_ByteString*                           a_pServerCertificate,

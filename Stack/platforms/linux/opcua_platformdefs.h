@@ -177,14 +177,14 @@ OPCUA_BEGIN_EXTERN_C
 #define OpcUa_StrnCatA(xDst, xDstSize, xSrc, xCount)  strncat(xDst, xSrc, xCount)
 
 /* import prototype for direct mapping on sprintf (TODO has to go) */
-/* OpcUa_Int sprintf(char *buffer, const char *format, ...); */
+/* OpcUa_Int sprintf(OpcUa_StringA buffer, OpcUa_ConstStringA format, ...); */
 #define OpcUa_SPrintfA                                sprintf
 
 /* import prototype for direct mapping on sscanf (TODO has to go) */
-/* OpcUa_Int sscanf(const OpcUa_CharA *buffer, const OpcUa_CharA *format, ... ); */
+/* OpcUa_Int sscanf(OpcUa_ConstStringA buffer, OpcUa_ConstStringA format, ... ); */
 #define OpcUa_SScanfA                                 sscanf
 
-OpcUa_Int32 OpcUa_P_String_snprintf(OpcUa_StringA sTarget, OpcUa_UInt32 nCount, OpcUa_StringA sFormat, ...);
+OpcUa_Int32 OpcUa_P_String_snprintf(OpcUa_StringA sTarget, OpcUa_UInt32 nCount, OpcUa_ConstStringA sFormat, ...);
 #define OpcUa_SnPrintfA                               OpcUa_P_String_snprintf
 
 /* shortcuts to OpcUa_String functions */

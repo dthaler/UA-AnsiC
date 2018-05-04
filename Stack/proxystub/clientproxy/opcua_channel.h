@@ -137,7 +137,7 @@ OPCUA_EXPORT OpcUa_StatusCode OpcUa_Channel_Connect(
  */
 OPCUA_EXPORT OpcUa_StatusCode OpcUa_Channel_BeginConnect(
     OpcUa_Channel                               pChannel,
-    OpcUa_StringA                               sUrl,
+    OpcUa_ConstStringA                          sUrl,
     OpcUa_ByteString*                           pClientCertificate,
     OpcUa_Key*                                  pClientPrivateKey,
     OpcUa_ByteString*                           pServerCertificate,
@@ -194,7 +194,7 @@ typedef OpcUa_StatusCode (OpcUa_Channel_PfnRequestComplete)(
  */
 OPCUA_EXPORT OpcUa_StatusCode OpcUa_Channel_InvokeService(
     OpcUa_Channel          hChannel,
-    OpcUa_StringA          sName,
+    OpcUa_ConstStringA     sName,
     OpcUa_Void*            pRequest,
     OpcUa_EncodeableType*  pRequestType,
     OpcUa_Void**           ppResponse,
@@ -212,7 +212,7 @@ OPCUA_EXPORT OpcUa_StatusCode OpcUa_Channel_InvokeService(
  */
 OPCUA_EXPORT OpcUa_StatusCode OpcUa_Channel_BeginInvokeService(
     OpcUa_Channel                     hChannel,
-    OpcUa_StringA                     sName,
+    OpcUa_ConstStringA                sName,
     OpcUa_Void*                       pRequest,
     OpcUa_EncodeableType*             pRequestType,
     OpcUa_Channel_PfnRequestComplete* pCallback,

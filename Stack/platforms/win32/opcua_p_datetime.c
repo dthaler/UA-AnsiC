@@ -189,8 +189,8 @@ OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_DateTime_GetStringFromDateTime(  OpcUa_Da
 /*============================================================================
  * Convert String into DateTime
  *===========================================================================*/
-OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_DateTime_GetDateTimeFromString(OpcUa_StringA   a_pchDateTimeString,
-                                                                OpcUa_DateTime* a_pDateTime)
+OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_DateTime_GetDateTimeFromString(OpcUa_ConstStringA a_pchDateTimeString,
+                                                                      OpcUa_DateTime*    a_pDateTime)
 {
     int         milliSet    = 0;
     int         tm_sec, tm_min, tm_hour;

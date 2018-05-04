@@ -99,8 +99,8 @@ OpcUa_StatusCode OpcUa_P_OpenSSL_PKI_SaveCertificate(
 */
 OpcUa_StatusCode OpcUa_P_OpenSSL_PKI_LoadCertificate(
     OpcUa_PKIProvider*          pProvider,
-    OpcUa_Void*                 pLoadHandle,
-    OpcUa_Void*                 pCertificateStore,
+    const OpcUa_Void*           pLoadHandle,
+    const OpcUa_Void*           pCertificateStore,
     OpcUa_ByteString*           pCertificate);
 
 /**
@@ -118,9 +118,9 @@ OpcUa_StatusCode OpcUa_P_OpenSSL_PKI_LoadCertificate(
   @param pPrivateKey              [out] The private key (in DER format).
   */
 OpcUa_StatusCode OpcUa_P_OpenSSL_PKI_LoadPrivateKeyFromFile(
-    OpcUa_StringA           privateKeyFile,
+    OpcUa_ConstStringA      privateKeyFile,
     OpcUa_P_FileFormat      fileFormat,
-    OpcUa_StringA           password,
+    OpcUa_ConstStringA      password,
     OpcUa_UInt              keyType,
     OpcUa_Key*              pPrivateKey);
 
@@ -218,8 +218,8 @@ OpcUa_StatusCode OpcUa_P_OpenSSL_PKI_NoSecurity_SaveCertificate(
 */
 OpcUa_StatusCode OpcUa_P_OpenSSL_PKI_NoSecurity_LoadCertificate(
     OpcUa_PKIProvider*          pProvider,
-    OpcUa_Void*                 pLoadHandle,
-    OpcUa_Void*                 pCertificateStore,
+    const OpcUa_Void*           pLoadHandle,
+    const OpcUa_Void*           pCertificateStore,
     OpcUa_ByteString*           pCertificate);
 
 /**
@@ -237,9 +237,9 @@ OpcUa_StatusCode OpcUa_P_OpenSSL_PKI_NoSecurity_LoadCertificate(
   @param pPrivateKey              [out] The private key (in DER format).
 */
 OpcUa_StatusCode OpcUa_P_OpenSSL_PKI_NoSecurity_LoadPrivateKeyFromFile(
-    OpcUa_StringA               privateKeyFile,
+    OpcUa_ConstStringA          privateKeyFile,
     OpcUa_P_FileFormat          fileFormat,
-    OpcUa_StringA               password,
+    OpcUa_ConstStringA          password,
     OpcUa_UInt                  keyType,
     OpcUa_Key*                  pPrivateKey);
 

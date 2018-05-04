@@ -44,7 +44,7 @@
 /*============================================================================
  * OpcUa_P_CryptoFactory_CreateCryptoProvider
  *===========================================================================*/
-OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_CryptoFactory_CreateCryptoProvider(  OpcUa_StringA           a_Uri,
+OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_CryptoFactory_CreateCryptoProvider(  OpcUa_ConstStringA      a_Uri,
                                                                             OpcUa_CryptoProvider*   a_pProvider)
 
 {

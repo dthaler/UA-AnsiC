@@ -82,8 +82,8 @@ OpcUa_StatusCode OpcUa_StringTable_EnsureCapacity(
  * OpcUa_StringTable_AddStringList
  *===========================================================================*/
 OpcUa_StatusCode OpcUa_StringTable_AddStringList(
-    OpcUa_StringTable* a_pTable,
-    OpcUa_StringA*     a_pStrings)
+    OpcUa_StringTable*  a_pTable,
+    OpcUa_ConstStringA* a_pStrings)
 {
     OpcUa_UInt32 ii = 0;
 

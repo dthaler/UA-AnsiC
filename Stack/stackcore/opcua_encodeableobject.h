@@ -84,7 +84,7 @@ typedef OpcUa_StatusCode (OpcUa_EncodeableObject_PfnDecode)(
 typedef struct _OpcUa_EncodeableType
 {
     /*! @brief The name of the encodeable type. */
-    OpcUa_StringA TypeName;
+    OpcUa_ConstStringA TypeName;
 
     /*! @brief The numeric type identifier. */
     OpcUa_UInt32 TypeId;

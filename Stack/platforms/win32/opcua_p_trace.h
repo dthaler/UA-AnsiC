@@ -56,8 +56,8 @@ OpcUa_Void OPCUA_DLLCALL OpcUa_P_Trace_Clear(void);
  */
 OpcUa_Void OPCUA_DLLCALL OpcUa_P_Trace(
 #if OPCUA_TRACE_FILE_LINE_INFO
-                                        OpcUa_UInt32 level,
-                                        OpcUa_CharA* sFile,
-                                        OpcUa_UInt32 line,
+                                        OpcUa_UInt32       level,
+                                        OpcUa_ConstStringA sFile,
+                                        OpcUa_UInt32       line,
 #endif
-                                        OpcUa_CharA* a_sMessage);
+                                        OpcUa_ConstStringA a_sMessage);

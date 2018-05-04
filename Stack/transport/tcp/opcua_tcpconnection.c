@@ -928,7 +928,7 @@ OpcUa_InitializeStatus(OpcUa_Module_TcpConnection, "SocketCallback");
 
 #if 0 /* debug code */
     {
-        OpcUa_StringA                       strEvent        = OpcUa_Null;
+        OpcUa_ConstStringA                       strEvent        = OpcUa_Null;
         switch(a_SocketEvent)
         {
         case OPCUA_SOCKET_NO_EVENT:

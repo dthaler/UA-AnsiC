@@ -64,14 +64,14 @@ OpcUa_UInt32 OPCUA_DLLCALL OpcUa_P_GetTickCount(void);
 /**
  * @see OpcUa_P_CharAToInt
  */
-OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_CharAToInt(   OpcUa_StringA sValue);
+OpcUa_Int32 OPCUA_DLLCALL OpcUa_P_CharAToInt(   OpcUa_ConstStringA sValue);
 
 /**
  * @see OpcUa_P_ParseUrl
  */
-OpcUa_StatusCode OpcUa_P_ParseUrl(  OpcUa_StringA   psUrl,
-                                    OpcUa_StringA*  psIpAddress,
-                                    OpcUa_UInt16*   puPort);
+OpcUa_StatusCode OpcUa_P_ParseUrl(  OpcUa_ConstStringA   psUrl,
+                                    OpcUa_StringA*       psIpAddress,
+                                    OpcUa_UInt16*        puPort);
 
 OPCUA_END_EXTERN_C
 

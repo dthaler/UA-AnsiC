@@ -38,8 +38,8 @@ OpcUa_ProxyStubConfiguration        OpcUa_ProxyStub_g_Configuration;
 OpcUa_EncodeableTypeTable           OpcUa_ProxyStub_g_EncodeableTypes;
 OpcUa_StringTable                   OpcUa_ProxyStub_g_NamespaceUris;
 OpcUa_StringA                       OpcUa_ProxyStub_g_pConfigString;
-OpcUa_StringA                       OpcUa_ProxyStub_g_VersionString         = OPCUA_PROXYSTUB_VERSIONSTRING;
-OpcUa_StringA                       OpcUa_ProxyStub_g_StaticConfigString    = OPCUA_PROXYSTUB_STATICCONFIGSTRING;
+OpcUa_ConstStringA                  OpcUa_ProxyStub_g_VersionString         = OPCUA_PROXYSTUB_VERSIONSTRING;
+OpcUa_ConstStringA                  OpcUa_ProxyStub_g_StaticConfigString    = OPCUA_PROXYSTUB_STATICCONFIGSTRING;
 
 #if OPCUA_USE_SYNCHRONISATION
 static OpcUa_Mutex                  OpcUa_ProxyStub_g_hGlobalsMutex         = OpcUa_Null;
@@ -52,7 +52,7 @@ static OpcUa_UInt32                 OpcUa_ProxyStub_g_uNoOfInits            = 0;
 /*============================================================================
  * OpcUa_StandardNamespaceUris
  *===========================================================================*/
-static OpcUa_StringA            OpcUa_ProxyStub_StandardNamespaceUris[] =
+static OpcUa_ConstStringA           OpcUa_ProxyStub_StandardNamespaceUris[] =
 {
     "http://opcfoundation.org/UA/",
     OpcUa_Null
@@ -477,7 +477,7 @@ OpcUa_FinishErrorHandling;
 /*============================================================================
  * OpcUa_ProxyStub_SetNamespaceUris
  *===========================================================================*/
-OpcUa_StatusCode OpcUa_ProxyStub_SetNamespaceUris(OpcUa_StringA* a_psNamespaceUris)
+OpcUa_StatusCode OpcUa_ProxyStub_SetNamespaceUris(OpcUa_ConstStringA* a_psNamespaceUris)
 {
 OpcUa_InitializeStatus(OpcUa_Module_ProxyStub, "SetNamespaceUris");
 
@@ -497,7 +497,7 @@ OpcUa_FinishErrorHandling;
 /*============================================================================
  * OpcUa_ProxyStub_GetVersion
  *===========================================================================*/
-OpcUa_StringA OPCUA_DLLCALL OpcUa_ProxyStub_GetVersion()
+OpcUa_ConstStringA OPCUA_DLLCALL OpcUa_ProxyStub_GetVersion()
 {
     return OpcUa_ProxyStub_g_VersionString;
 }
@@ -505,19 +505,19 @@ OpcUa_StringA OPCUA_DLLCALL OpcUa_ProxyStub_GetVersion()
 /*============================================================================
  * OpcUa_ProxyStub_GetConfigString
  *===========================================================================*/
-OpcUa_StringA OPCUA_DLLCALL OpcUa_ProxyStub_GetConfigString()
+OpcUa_ConstStringA OPCUA_DLLCALL OpcUa_ProxyStub_GetConfigString()
 {
 #if OPCUA_USE_SYNCHRONISATION
     if(OpcUa_ProxyStub_g_hGlobalsMutex == OpcUa_Null)
     {
-        return (OpcUa_StringA)"ProxyStub not initialized!";
+        return (OpcUa_ConstStringA)"ProxyStub not initialized!";
     }
     else
 #endif /* OPCUA_USE_SYNCHRONISATION */
     {
         if(OpcUa_IsBad(OpcUa_ProxyStub_UpdateConfigString()))
         {
-            return (OpcUa_StringA)"Could not update ConfigString!";
+            return (OpcUa_ConstStringA)"Could not update ConfigString!";
         }
         else
         {
@@ -529,7 +529,7 @@ OpcUa_StringA OPCUA_DLLCALL OpcUa_ProxyStub_GetConfigString()
 /*============================================================================
  * OpcUa_ProxyStub_GetStaticConfigString
  *===========================================================================*/
-OpcUa_StringA OPCUA_DLLCALL OpcUa_ProxyStub_GetStaticConfigString()
+OpcUa_ConstStringA OPCUA_DLLCALL OpcUa_ProxyStub_GetStaticConfigString()
 {
     return OpcUa_ProxyStub_g_StaticConfigString;
 }

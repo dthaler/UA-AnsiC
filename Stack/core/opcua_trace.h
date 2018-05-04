@@ -109,19 +109,19 @@ OPCUA_EXPORT OpcUa_Void OPCUA_DLLCALL OpcUa_Trace_Toggle(OpcUa_Boolean a_bActive
 OPCUA_EXPORT OpcUa_Boolean OPCUA_DLLCALL OpcUa_Trace_Imp(
     OpcUa_UInt32 uTraceLevel,
 #if OPCUA_TRACE_FILE_LINE_INFO
-    OpcUa_CharA* sFile,
+    OpcUa_ConstStringA sFile,
     OpcUa_UInt32 sLine,
 #endif /* OPCUA_TRACE_FILE_LINE_INFO */
-    OpcUa_CharA* sFormat,
+    OpcUa_ConstStringA sFormat,
     ...);
 
 OPCUA_EXPORT OpcUa_Boolean OPCUA_DLLCALL OpcUa_Trace_Nop(
     OpcUa_UInt32 uTraceLevel,
 #if OPCUA_TRACE_FILE_LINE_INFO
-    OpcUa_CharA* sFile,
+    OpcUa_ConstStringA sFile,
     OpcUa_UInt32 sLine,
 #endif /* OPCUA_TRACE_FILE_LINE_INFO */
-    OpcUa_CharA* sFormat,
+    OpcUa_ConstStringA sFormat,
     ...);
 
 OPCUA_END_EXTERN_C

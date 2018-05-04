@@ -38,7 +38,7 @@ OPCUA_BEGIN_EXTERN_C
  * Create a SSL server socket
  *===========================================================================*/
 OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_SocketManager_CreateSslServer(  OpcUa_SocketManager              pSocketManager,
-                                                                       OpcUa_StringA                    sAddress,
+                                                                       OpcUa_ConstStringA               sAddress,
                                                                        OpcUa_Boolean                    bListenOnAllInterfaces,
                                                                        OpcUa_ByteString*                pServerCertificate,
                                                                        OpcUa_Key*                       pServerPrivateKey,
@@ -52,7 +52,7 @@ OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_SocketManager_CreateSslServer(  OpcUa_Soc
  * Create a SSL client socket
  *===========================================================================*/
 OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_SocketManager_CreateSslClient(  OpcUa_SocketManager              pSocketManager,
-                                                                       OpcUa_StringA                    sRemoteAddress,
+                                                                       OpcUa_ConstStringA               sRemoteAddress,
                                                                        OpcUa_UInt16                     uLocalPort,
                                                                        OpcUa_ByteString*                pClientCertificate,
                                                                        OpcUa_Key*                       pClientPrivateKey,

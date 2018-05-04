@@ -25,7 +25,7 @@ OPCUA_BEGIN_EXTERN_C
 typedef struct _OpcUa_EnumeratedValue
 {
     /*! @brief The name. */
-    OpcUa_StringA Name;
+    OpcUa_ConstStringA Name;
 
     /*! @brief The value associated with the name. */
     OpcUa_Int32 Value;
@@ -38,7 +38,7 @@ OpcUa_EnumeratedValue;
 typedef struct _OpcUa_EnumeratedType
 {
     /*! @brief The name of the enumerated type. */
-    OpcUa_StringA TypeName;
+    OpcUa_ConstStringA TypeName;
 
     /*! @brief A null terminated list of values. */
     OpcUa_EnumeratedValue* Values;
@@ -55,7 +55,7 @@ OpcUa_EnumeratedType;
 OPCUA_EXPORT OpcUa_StatusCode OpcUa_EnumeratedType_FindName(
     OpcUa_EnumeratedType* pType,
     OpcUa_Int32           nValue,
-    OpcUa_StringA*        pName);
+    OpcUa_ConstStringA*   pName);
 
 /**
   @brief Finds the value associated with a name for an enumerated type.
@@ -66,7 +66,7 @@ OPCUA_EXPORT OpcUa_StatusCode OpcUa_EnumeratedType_FindName(
 */
 OPCUA_EXPORT OpcUa_StatusCode OpcUa_EnumeratedType_FindValue(
     OpcUa_EnumeratedType* pType,
-    OpcUa_StringA         sName,
+    OpcUa_ConstStringA    sName,
     OpcUa_Int32*          pValue);
 
 OPCUA_END_EXTERN_C

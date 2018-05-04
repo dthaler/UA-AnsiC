@@ -56,9 +56,9 @@ OPCUA_EXPORT OpcUa_Void OPCUA_DLLCALL OpcUa_Memory_Free(OpcUa_Void* pvBuffer);
  *   OpcUa_BadOutOfRange      if number of bytes to copy greater nSizeInBytes
 */
 OPCUA_EXPORT OpcUa_StatusCode OPCUA_DLLCALL OpcUa_Memory_MemCpy(   OpcUa_Void*  pBuffer,
-    OpcUa_UInt32 nSizeInBytes,
-    OpcUa_Void*  pSource,
-    OpcUa_UInt32 nCount);
+                                                                   OpcUa_UInt32 nSizeInBytes,
+                                                                   const OpcUa_Void*  pSource,
+                                                                   OpcUa_UInt32 nCount);
 
 /**
  * @brief destroys secret data values in a cyptographically safe way.

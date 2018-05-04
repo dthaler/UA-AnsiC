@@ -48,7 +48,7 @@ OpcUa_Void OPCUA_DLLCALL OpcUa_P_SocketManager_Delete(              OpcUa_Socket
  * Create a server socket
  *===========================================================================*/
 OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_SocketManager_CreateServer(  OpcUa_SocketManager         pSocketManager,
-                                                                    OpcUa_StringA               sAddress,
+                                                                    OpcUa_ConstStringA          sAddress,
                                                                     OpcUa_Boolean               bListenOnAllInterfaces,
                                                                     OpcUa_Socket_EventCallback  pfnSocketCallBack,
                                                                     OpcUa_Void*                 pCallbackData,
@@ -58,7 +58,7 @@ OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_SocketManager_CreateServer(  OpcUa_Socket
  * Create a client socket
  *===========================================================================*/
 OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_SocketManager_CreateClient(  OpcUa_SocketManager         pSocketManager,
-                                                                    OpcUa_StringA               sRemoteAddress,
+                                                                    OpcUa_ConstStringA          sRemoteAddress,
                                                                     OpcUa_UInt16                uLocalPort,
                                                                     OpcUa_Socket_EventCallback  pfnSocketCallBack,
                                                                     OpcUa_Void*                 pCallbackData,
@@ -142,7 +142,7 @@ OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_Socket_CleanupNetwork(       OpcUa_Void);
 /*============================================================================
  * Convert a text encoded internet address to its binary representation.
  *===========================================================================*/
-OpcUa_UInt32 OPCUA_DLLCALL OpcUa_P_Socket_InetAddr(                 OpcUa_StringA sRemoteAddress);
+OpcUa_UInt32 OPCUA_DLLCALL OpcUa_P_Socket_InetAddr(                 OpcUa_ConstStringA sRemoteAddress);
 
 /*============================================================================
  * Get the name of the local host.

@@ -52,7 +52,7 @@ typedef OpcUa_StatusCode (OPCUA_DLLCALL OpcUa_P_Timer_Callback)(OpcUa_Void*     
 /***********************************************************************************************/
 
 /** @brief Trace hook function type. */
-typedef OpcUa_Void (OPCUA_DLLCALL *OpcUa_P_TraceHook)(OpcUa_CharA* sMessage);
+typedef OpcUa_Void (OPCUA_DLLCALL *OpcUa_P_TraceHook)(OpcUa_ConstStringA sMessage);
 
 /***********************************************************************************************/
 
@@ -182,7 +182,7 @@ struct S_OpcUa_Port_CallTable
      */
     OpcUa_StatusCode    (OPCUA_DLLCALL* MemCpy)                   ( OpcUa_Void*                 pBuffer,
                                                                     OpcUa_UInt32                nSizeInBytes,
-                                                                    OpcUa_Void*                 pSource,
+                                                                    const OpcUa_Void*           pSource,
                                                                     OpcUa_UInt32                nCount);
 
     /** @brief Standard memset functionality.
@@ -206,7 +206,7 @@ struct S_OpcUa_Port_CallTable
      */
     OpcUa_Void          (OPCUA_DLLCALL* GetTimeOfDay)             ( OpcUa_TimeVal*              pValue);
 
-    /** @brief Converts the given datetime into a string format format. The given buffer must have a lengt of
+    /** @brief Converts the given datetime into a string format format. The given buffer must have a length of
      *         at least 25 bytes. The length parameter is used for verification. The format is %04d-%02d-%02dT%02d:%02d:%02d.%03dZ.
      *  @ingroup opcua_platformlayer_interface
      */
@@ -218,7 +218,7 @@ struct S_OpcUa_Port_CallTable
      *         %04d-%02d-%02dT%02d:%02d:%02d.%03dZ
      *  @ingroup opcua_platformlayer_interface
      */
-    OpcUa_StatusCode    (OPCUA_DLLCALL* GetDateTimeFromString)    ( OpcUa_StringA               DateTimeString,
+    OpcUa_StatusCode    (OPCUA_DLLCALL* GetDateTimeFromString)    ( OpcUa_ConstStringA          DateTimeString,
                                                                     OpcUa_DateTime*             DateTime);
 
     /**@} Date and Time Functions */
@@ -354,11 +354,11 @@ struct S_OpcUa_Port_CallTable
      */
     OpcUa_Void          (OPCUA_DLLCALL* Trace)                    (
 #if OPCUA_TRACE_FILE_LINE_INFO
-                                                                    OpcUa_UInt32 level,
-                                                                    OpcUa_CharA* sFile,
-                                                                    OpcUa_UInt32 line,
+                                                                    OpcUa_UInt32       level,
+                                                                    OpcUa_ConstStringA sFile,
+                                                                    OpcUa_UInt32       line,
 #endif
-                                                                    OpcUa_CharA* sFormat);
+                                                                    OpcUa_ConstStringA sFormat);
 
     /** @brief Initialize tracing functionality during stack initialization before any call to Trace is made.
      *  @ingroup opcua_platformlayer_interface
@@ -379,7 +379,7 @@ struct S_OpcUa_Port_CallTable
      */
     OpcUa_StatusCode    (OPCUA_DLLCALL* StrnCpy)                  ( OpcUa_StringA               strDestination,
                                                                     OpcUa_UInt32                uiDestSize,
-                                                                    OpcUa_StringA               strSource,
+                                                                    OpcUa_ConstStringA          strSource,
                                                                     OpcUa_UInt32                uiLength);
 
     /** @brief Standard strncat functionality.
@@ -387,26 +387,26 @@ struct S_OpcUa_Port_CallTable
      */
     OpcUa_StatusCode    (OPCUA_DLLCALL* StrnCat)                  ( OpcUa_StringA               strDestination,
                                                                     OpcUa_UInt32                uiDestSize,
-                                                                    OpcUa_StringA               strSource,
+                                                                    OpcUa_ConstStringA          strSource,
                                                                     OpcUa_UInt32                uiLength);
 
     /** @brief Standard strlen functionality.
      *  @ingroup opcua_platformlayer_interface
      */
-    OpcUa_Int32         (OPCUA_DLLCALL* StrLen)                   ( OpcUa_StringA               pCString);
+    OpcUa_Int32         (OPCUA_DLLCALL* StrLen)                   ( OpcUa_ConstStringA          pCString);
 
     /** @brief Standard strncmp functionality.
      *  @ingroup opcua_platformlayer_interface
      */
-    OpcUa_Int32         (OPCUA_DLLCALL* StrnCmp)                  ( OpcUa_StringA               string1,
-                                                                    OpcUa_StringA               string2,
+    OpcUa_Int32         (OPCUA_DLLCALL* StrnCmp)                  ( OpcUa_ConstStringA          string1,
+                                                                    OpcUa_ConstStringA          string2,
                                                                     OpcUa_UInt32                uiLength);
 
     /** @brief Standard strnicmp functionality.
      *  @ingroup opcua_platformlayer_interface
      */
-    OpcUa_Int32         (OPCUA_DLLCALL* StrniCmp)                 ( OpcUa_StringA               string1,
-                                                                    OpcUa_StringA               string2,
+    OpcUa_Int32         (OPCUA_DLLCALL* StrniCmp)                 ( OpcUa_ConstStringA          string1,
+                                                                    OpcUa_ConstStringA          string2,
                                                                     OpcUa_UInt32                uiLength);
 
     /** @brief Standard strvsnprintf functionality.
@@ -414,7 +414,7 @@ struct S_OpcUa_Port_CallTable
      */
     OpcUa_Int32         (OPCUA_DLLCALL* StrVsnPrintf)             ( OpcUa_StringA               sDest,
                                                                     OpcUa_UInt32                uCount,
-                                                                    const OpcUa_StringA         sFormat,
+                                                                    OpcUa_ConstStringA          sFormat,
                                                                     varg_list                   argptr);
 
     /**@} String Functions */
@@ -453,7 +453,7 @@ struct S_OpcUa_Port_CallTable
     /** @brief Convert the given string containing a number into OpcUa_Int32.
      *  @ingroup opcua_platformlayer_interface
      */
-    OpcUa_Int32         (OPCUA_DLLCALL* CharToInt)                ( OpcUa_StringA               sValue);
+    OpcUa_Int32         (OPCUA_DLLCALL* CharToInt)                ( OpcUa_ConstStringA          sValue);
 
     /**@} Utility Functions */
     /**@name Network Functions */
@@ -463,7 +463,7 @@ struct S_OpcUa_Port_CallTable
      *         No longer required by the stack. Can be ignored and may be removed in future versions.
      *  @ingroup opcua_platformlayer_interface
      */
-    OpcUa_UInt32        (OPCUA_DLLCALL* InetAddr)                 ( OpcUa_StringA               sRemoteAddress);
+    OpcUa_UInt32        (OPCUA_DLLCALL* InetAddr)                 ( OpcUa_ConstStringA          sRemoteAddress);
 
     /** @brief Create a socket manager with the ability to host nSockets sockets and use the given runtime behavior flags.
      *  @ingroup opcua_platformlayer_interface
@@ -483,7 +483,7 @@ struct S_OpcUa_Port_CallTable
      *  @ingroup opcua_platformlayer_interface
      */
     OpcUa_StatusCode    (OPCUA_DLLCALL* SocketManagerCreateServer)( OpcUa_SocketManager         pSocketManager,
-                                                                    OpcUa_StringA               sRemoteAdress,
+                                                                    OpcUa_ConstStringA          sRemoteAddress,
                                                                     OpcUa_Boolean               bListenOnAllInterfaces,
                                                                     OpcUa_Socket_EventCallback  pfnSocketCallBack,
                                                                     OpcUa_Void*                 pCookie,
@@ -498,7 +498,7 @@ struct S_OpcUa_Port_CallTable
      *  @ingroup opcua_platformlayer_interface
      */
     OpcUa_StatusCode    (OPCUA_DLLCALL* SocketManagerCreateClient)( OpcUa_SocketManager         pSocketManager,
-                                                                    OpcUa_StringA               sRemoteAdress,
+                                                                    OpcUa_ConstStringA          sRemoteAddress,
                                                                     OpcUa_UInt16                usLocalPort,
                                                                     OpcUa_Socket_EventCallback  pfnSocketCallBack,
                                                                     OpcUa_Void*                 pCookie,
@@ -510,7 +510,7 @@ struct S_OpcUa_Port_CallTable
      *  @ingroup opcua_platformlayer_interface
      */
     OpcUa_StatusCode    (OPCUA_DLLCALL* SocketManagerCreateSslServer)( OpcUa_SocketManager              pSocketManager,
-                                                                       OpcUa_StringA                    sRemoteAdress,
+                                                                       OpcUa_ConstStringA               sRemoteAddress,
                                                                        OpcUa_Boolean                    bListenOnAllInterfaces,
                                                                        OpcUa_ByteString*                pServerCertificate,
                                                                        OpcUa_Key*                       pServerPrivateKey,
@@ -529,7 +529,7 @@ struct S_OpcUa_Port_CallTable
      *  @ingroup opcua_platformlayer_interface
      */
     OpcUa_StatusCode    (OPCUA_DLLCALL* SocketManagerCreateSslClient)( OpcUa_SocketManager              pSocketManager,
-                                                                       OpcUa_StringA                    sRemoteAdress,
+                                                                       OpcUa_ConstStringA               sRemoteAddress,
                                                                        OpcUa_UInt16                     usLocalPort,
                                                                        OpcUa_ByteString*                pClientCertificate,
                                                                        OpcUa_Key*                       pClientPrivateKey,
@@ -619,7 +619,7 @@ struct S_OpcUa_Port_CallTable
     /** @brief Create a crypto provider based on the given security policy URI.
      *  @ingroup opcua_platformlayer_interface
      */
-    OpcUa_StatusCode    (OPCUA_DLLCALL* CreateCryptoProvider)   (   OpcUa_StringA               Uri,
+    OpcUa_StatusCode    (OPCUA_DLLCALL* CreateCryptoProvider)   (   OpcUa_ConstStringA          Uri,
                                                                     OpcUa_CryptoProvider*       pProvider);
 
     /** @brief Delete the given crypto provider.

@@ -133,12 +133,12 @@ OpcUa_Void OPCUA_DLLCALL OpcUa_Trace_ChangeTraceLevel(OpcUa_UInt32 a_uNewTraceLe
     return;
 }
 
-OpcUa_Boolean OPCUA_DLLCALL OpcUa_Trace_Nop(OpcUa_UInt32     a_uTraceLevel,
+OpcUa_Boolean OPCUA_DLLCALL OpcUa_Trace_Nop(OpcUa_UInt32       a_uTraceLevel,
 #if OPCUA_TRACE_FILE_LINE_INFO
-                                            OpcUa_CharA*     a_sFile,
-                                            OpcUa_UInt32     a_sLine,
+                                            OpcUa_ConstStringA a_sFile,
+                                            OpcUa_UInt32       a_sLine,
 #endif /* OPCUA_TRACE_FILE_LINE_INFO */
-                                            OpcUa_CharA*     a_sFormat,
+                                            OpcUa_ConstStringA a_sFormat,
                                             ...)
 {
     OpcUa_ReferenceParameter(a_uTraceLevel);
@@ -158,12 +158,12 @@ OpcUa_Boolean OPCUA_DLLCALL OpcUa_Trace_Nop(OpcUa_UInt32     a_uTraceLevel,
 * Writes the given string and the parameters to the trace device, if the given
 * trace level is activated.
 */
-OpcUa_Boolean OPCUA_DLLCALL OpcUa_Trace_Imp(OpcUa_UInt32    a_uTraceLevel,
+OpcUa_Boolean OPCUA_DLLCALL OpcUa_Trace_Imp(OpcUa_UInt32       a_uTraceLevel,
 #if OPCUA_TRACE_FILE_LINE_INFO
-                                            OpcUa_CharA*    a_sFile,
-                                            OpcUa_UInt32    a_sLine,
+                                            OpcUa_ConstStringA a_sFile,
+                                            OpcUa_UInt32       a_sLine,
 #endif /* OPCUA_TRACE_FILE_LINE_INFO */
-                                            OpcUa_CharA*    a_sFormat,
+                                            OpcUa_ConstStringA a_sFormat,
                                             ...)
 {
 #if OPCUA_TRACE_ENABLE

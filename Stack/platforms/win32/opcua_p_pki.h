@@ -83,13 +83,13 @@ struct _OpcUa_P_OpenSSL_CertificateStore_Config
     OpcUa_P_PKI_Types   PkiType;
 
     /*! @brief The trusted certificate store location. */
-    OpcUa_StringA       CertificateTrustListLocation;
+    OpcUa_ConstStringA  CertificateTrustListLocation;
 
     /*! @brief The certificate revocation list. */
-    OpcUa_StringA       CertificateRevocationListLocation;
+    OpcUa_ConstStringA  CertificateRevocationListLocation;
 
     /*! @brief The untrusted certificate store location. */
-    OpcUa_StringA       CertificateUntrustedListLocation;
+    OpcUa_ConstStringA  CertificateUntrustedListLocation;
 
     /*! @brief PKI-specific flags. */
     OpcUa_UInt32        Flags;

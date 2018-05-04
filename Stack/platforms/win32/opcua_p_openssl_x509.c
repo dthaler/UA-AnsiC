@@ -430,7 +430,7 @@ OpcUa_FinishErrorHandling;
 OpcUa_StatusCode OpcUa_P_OpenSSL_X509_GetPublicKey(
     OpcUa_CryptoProvider*       a_pProvider,
     OpcUa_ByteString*           a_pCertificate,
-    OpcUa_StringA               a_password,             /* this could be optional */
+    OpcUa_ConstStringA          a_password,             /* this could be optional */
     OpcUa_Key*                  a_pPublicKey)
 {
     EVP_PKEY*               pPublicKey      = OpcUa_Null;

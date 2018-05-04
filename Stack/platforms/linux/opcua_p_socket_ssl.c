@@ -925,7 +925,7 @@ OpcUa_FinishErrorHandling;
  * Create a SSL server socket
  *===========================================================================*/
 OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_SocketManager_CreateSslServer(  OpcUa_SocketManager              a_pSocketManager,
-                                                                       OpcUa_StringA                    a_sAddress,
+                                                                       OpcUa_ConstStringA               a_sAddress,
                                                                        OpcUa_Boolean                    a_bListenOnAllInterfaces,
                                                                        OpcUa_ByteString*                a_pServerCertificate,
                                                                        OpcUa_Key*                       a_pServerPrivateKey,
@@ -1033,7 +1033,7 @@ OpcUa_FinishErrorHandling;
  * Create a SSL client socket
  *===========================================================================*/
 OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_SocketManager_CreateSslClient(  OpcUa_SocketManager              a_pSocketManager,
-                                                                       OpcUa_StringA                    a_sRemoteAddress,
+                                                                       OpcUa_ConstStringA               a_sRemoteAddress,
                                                                        OpcUa_UInt16                     a_uLocalPort,
                                                                        OpcUa_ByteString*                a_pClientCertificate,
                                                                        OpcUa_Key*                       a_pClientPrivateKey,

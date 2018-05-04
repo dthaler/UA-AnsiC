@@ -104,7 +104,7 @@ OPCUA_EXPORT OpcUa_StatusCode OPCUA_DLLCALL OpcUa_PKIProvider_Create(   OpcUa_Vo
 OPCUA_EXPORT OpcUa_StatusCode OPCUA_DLLCALL OpcUa_PKIProvider_Delete(   OpcUa_PKIProvider*  pProvider);
 
 /* Crypto */
-OPCUA_EXPORT OpcUa_StatusCode OPCUA_DLLCALL OpcUa_CryptoProvider_Create(OpcUa_StringA           psSecurityProfileUri,
+OPCUA_EXPORT OpcUa_StatusCode OPCUA_DLLCALL OpcUa_CryptoProvider_Create(OpcUa_ConstStringA      psSecurityProfileUri,
                                                                         OpcUa_CryptoProvider*   pProvider);
 
 OPCUA_EXPORT OpcUa_StatusCode OPCUA_DLLCALL OpcUa_CryptoProvider_Delete(OpcUa_CryptoProvider*   pProvider);
@@ -119,13 +119,13 @@ OPCUA_EXPORT OpcUa_StatusCode OPCUA_DLLCALL OpcUa_OpenSSLSeedPRNG(      OpcUa_By
 /* StringA */
 OPCUA_EXPORT OpcUa_Int32      OPCUA_DLLCALL OpcUa_StringA_vsnprintf(    OpcUa_StringA               sDest,
                                                                         OpcUa_UInt32                uCount,
-                                                                        const OpcUa_StringA         sFormat,
+                                                                        OpcUa_ConstStringA          sFormat,
                                                                         varg_list                   argptr);
 
 
 OPCUA_EXPORT OpcUa_Int32      OPCUA_DLLCALL OpcUa_StringA_snprintf(     OpcUa_StringA               sDest,
                                                                         OpcUa_UInt32                uCount,
-                                                                        const OpcUa_StringA         sFormat,
+                                                                        OpcUa_ConstStringA          sFormat,
                                                                         ...);
 
 
