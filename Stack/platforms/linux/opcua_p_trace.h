@@ -33,7 +33,7 @@
 /**
  * Initialize all resources needed for tracing.
  */
-OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_Trace_Initialize(void);
+OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_Trace_Initialize(OpcUa_Void);
 
 /*============================================================================
  * Trace Initialize
@@ -41,7 +41,7 @@ OpcUa_StatusCode OPCUA_DLLCALL OpcUa_P_Trace_Initialize(void);
 /**
  * Clear all resources needed for tracing.
  */
-OpcUa_Void OPCUA_DLLCALL OpcUa_P_Trace_Clear(void);
+OpcUa_Void OPCUA_DLLCALL OpcUa_P_Trace_Clear(OpcUa_Void);
 
 /*============================================================================
  * Tracefunction
