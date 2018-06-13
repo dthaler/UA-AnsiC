@@ -435,7 +435,7 @@ typedef struct _OpcUa_StatusCodeString
         OpcUa_UInt32        uModule              = xModule; \
         OpcUa_CharA         const uStatusMethod[]= xMethod;   \
         OpcUa_ReferenceParameter(uStatusMethod); \
-        OpcUa_Trace(OPCUA_TRACE_LEVEL_DEBUG, "--> " #xModule "::" #xMethod " (0x%08X)\n", (xModule&0x0000FFFFL));\
+        OpcUa_Trace(OPCUA_TRACE_LEVEL_DEBUG, "--> " #xModule "::" #xMethod " (0x%08lX)\n", (xModule&0x0000FFFFL));\
         if (uStatus != OpcUa_Good) goto Error; OpcUa_ReferenceParameter(uModule);
     #else /* OPCUA_TRACE_ERROR_MACROS */
         #define OpcUa_InitializeStatus(xModule, xMethod)     \

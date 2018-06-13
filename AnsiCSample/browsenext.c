@@ -61,7 +61,6 @@ OpcUa_StatusCode my_BrowseNext(
 {
 	extern _my_continuationpoint_	Continuation_Point_Data;
 	OpcUa_Int               m;
-	extern OpcUa_UInt32		securechannelId;
 	extern OpcUa_UInt32		session_flag;
 	extern OpcUa_Double		msec_counter;
 	extern OpcUa_String*	p_user_name;

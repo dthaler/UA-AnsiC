@@ -66,7 +66,6 @@ OpcUa_StatusCode my_Browse(
 {
 	_BaseAttribute_*		pointer_to_node;
 	OpcUa_Int				m;
-	extern OpcUa_UInt32		securechannelId;
 	extern OpcUa_UInt32		session_flag;
 	extern OpcUa_Double		msec_counter;
 	extern OpcUa_String*	p_user_name;

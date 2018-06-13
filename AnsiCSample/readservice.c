@@ -61,7 +61,6 @@ OpcUa_StatusCode my_Read(
 {
 	OpcUa_Int i,n;
 	OpcUa_Void* p_Node;
-	extern OpcUa_UInt32		securechannelId;
 	extern OpcUa_UInt32		session_flag;
 	extern OpcUa_Double		msec_counter;
 	extern OpcUa_String*	p_user_name;
