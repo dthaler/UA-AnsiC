@@ -39,8 +39,29 @@
 #include "readservice.h"
 #include "general_header.h"
 
+OpcUa_StatusCode fill_data_value(
+    OpcUa_DataValue*         a_ValueToFill, 
+    _VariableNode_*          a_pNode,
+    OpcUa_TimestampsToReturn a_eTimestampsToReturn)
+{
+    OpcUa_InitializeStatus(OpcUa_Module_Server, "fill_data_value");
 
+    a_ValueToFill->StatusCode = fill_Variant_for_value_attribute(a_pNode, OpcUa_Null, a_ValueToFill);
 
+    if (a_eTimestampsToReturn != OpcUa_TimestampsToReturn_Neither)
+    {
+        uStatus = assign_Timestamp(a_ValueToFill, a_eTimestampsToReturn);
+        if (OpcUa_IsBad(uStatus))
+        {
+            a_ValueToFill->StatusCode = OpcUa_BadInternalError;
+            uStatus = OpcUa_Good;
+        }
+    }
+
+    OpcUa_ReturnStatusCode;
+    OpcUa_BeginErrorHandling;
+    OpcUa_FinishErrorHandling;
+}
 
 /*============================================================================
  * method which implements the Read service.
@@ -185,16 +206,7 @@ OpcUa_StatusCode my_Read(
 						{
 							if((a_pNodesToRead+n)->AttributeId==OpcUa_Attributes_Value)
 							{
-								 ((*a_pResults)+n)->StatusCode=fill_Variant_for_value_attribute((_VariableNode_*)p_Node, OpcUa_Null,((*a_pResults)+n));
-								if(a_eTimestampsToReturn!=OpcUa_TimestampsToReturn_Neither)
-								{
-									uStatus=assign_Timestamp(((*a_pResults)+n),a_eTimestampsToReturn);
-									if(OpcUa_IsBad(uStatus))
-									{
-										((*a_pResults)+n)->StatusCode=OpcUa_BadInternalError;
-										uStatus=OpcUa_Good;
-									}
-								}
+								uStatus = fill_data_value((*a_pResults)+n, (_VariableNode_*)p_Node, a_eTimestampsToReturn);
 							}
 							if((a_pNodesToRead+n)->AttributeId==OpcUa_Attributes_DataType)
 							{
@@ -387,7 +399,6 @@ OpcUa_StatusCode my_Read(
 	for(i=0;i<a_nNoOfNodesToRead;i++)
 	{
 		MY_TRACE("\n%s attributeId:%u\n",getNodeIdString(&(a_pNodesToRead+i)->NodeId),(a_pNodesToRead+i)->AttributeId);
-		
 	}
 #endif /*_DEBUGGING_*/
 

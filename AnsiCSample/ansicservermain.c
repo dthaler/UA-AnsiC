@@ -71,6 +71,8 @@
 #include "mytrace.h"
 #include "readservice.h"
 #include "general_header.h"
+#include "subscriptionservice.h"
+#include "translateservice.h"
 
 #define REVISED_SESSIONTIMEOUT  30000    
 
@@ -214,13 +216,92 @@ OpcUa_ServiceType CloseSession =
 };
 
 /*============================================================================
+ * The service dispatch information TranslateBrowsePathsToNodeIds service.
+ *===========================================================================*/
+OpcUa_ServiceType my_TranslateBrowsePathsToNodeIds_ServiceType =
+{
+    OpcUaId_TranslateBrowsePathsToNodeIdsRequest,
+    &OpcUa_TranslateBrowsePathsToNodeIdsResponse_EncodeableType,
+    (OpcUa_PfnBeginInvokeService*)OpcUa_Server_BeginTranslateBrowsePathsToNodeIds,
+    (OpcUa_PfnInvokeService*)my_TranslateBrowsePathsToNodeIds
+};
+
+/*============================================================================
  * The service dispatch information CreateSubscription service.
  *===========================================================================*/
-OpcUa_ServiceType  dummy_CreateSubscription =
-	{	OpcUaId_CreateSubscriptionRequest,
-		OpcUa_Null, /*&OpcUa_CreateSubscriptionResponse_EncodeableType,*/
-		(OpcUa_PfnBeginInvokeService*)OpcUa_Server_BeginCreateSubscription,
-		(OpcUa_PfnInvokeService*)OpcUa_ServerApi_CreateSubscription};
+OpcUa_ServiceType my_CreateSubscription_ServiceType =
+{
+    OpcUaId_CreateSubscriptionRequest,
+    &OpcUa_CreateSubscriptionResponse_EncodeableType,
+    (OpcUa_PfnBeginInvokeService*)OpcUa_Server_BeginCreateSubscription,
+    (OpcUa_PfnInvokeService*)my_CreateSubscription
+};
+
+/*============================================================================
+ * The service dispatch information SetPublishingMode service.
+ *===========================================================================*/
+OpcUa_ServiceType my_SetPublishingMode_ServiceType =
+{
+    OpcUaId_SetPublishingModeRequest,
+    &OpcUa_SetPublishingModeResponse_EncodeableType,
+    (OpcUa_PfnBeginInvokeService*)OpcUa_Server_BeginSetPublishingMode,
+    (OpcUa_PfnInvokeService*)my_SetPublishingMode
+};
+
+/*============================================================================
+ * The service dispatch information DeleteSubscriptions service.
+ *===========================================================================*/
+OpcUa_ServiceType my_DeleteSubscriptions_ServiceType =
+{
+    OpcUaId_DeleteSubscriptionsRequest,
+    &OpcUa_DeleteSubscriptionsResponse_EncodeableType,
+    (OpcUa_PfnBeginInvokeService*)OpcUa_Server_BeginDeleteSubscriptions,
+    (OpcUa_PfnInvokeService*)my_DeleteSubscriptions
+};
+
+/*============================================================================
+ * The service dispatch information CreateMonitoredItems service.
+ *===========================================================================*/
+OpcUa_ServiceType my_CreateMonitoredItems_ServiceType =
+{
+    OpcUaId_CreateMonitoredItemsRequest,
+    &OpcUa_CreateMonitoredItemsResponse_EncodeableType,
+    (OpcUa_PfnBeginInvokeService*)OpcUa_Server_BeginCreateMonitoredItems,
+    (OpcUa_PfnInvokeService*)my_CreateMonitoredItems
+};
+
+/*============================================================================
+ * The service dispatch information DeleteMonitoredItems service.
+ *===========================================================================*/
+OpcUa_ServiceType my_DeleteMonitoredItems_ServiceType =
+{
+    OpcUaId_DeleteMonitoredItemsRequest,
+    &OpcUa_DeleteMonitoredItemsResponse_EncodeableType,
+    (OpcUa_PfnBeginInvokeService*)OpcUa_Server_BeginDeleteMonitoredItems,
+    (OpcUa_PfnInvokeService*)my_DeleteMonitoredItems
+};
+
+/*============================================================================
+ * The service dispatch information Publish service.
+ *===========================================================================*/
+OpcUa_ServiceType my_Publish_ServiceType =
+{
+    OpcUaId_PublishRequest,
+    &OpcUa_PublishResponse_EncodeableType,
+    (OpcUa_PfnBeginInvokeService*)my_BeginPublish,
+    (OpcUa_PfnInvokeService*)OpcUa_ServerApi_Publish
+};
+
+/*============================================================================
+ * The service dispatch information Republish service.
+ *===========================================================================*/
+OpcUa_ServiceType my_Republish_ServiceType =
+{
+    OpcUaId_RepublishRequest,
+    &OpcUa_RepublishResponse_EncodeableType,
+    (OpcUa_PfnBeginInvokeService*)my_BeginRepublish,
+    (OpcUa_PfnInvokeService*)OpcUa_ServerApi_Republish
+};
 
 /** @brief All supported services. */
 OpcUa_ServiceType*  UaTestServer_SupportedServices[] = 
@@ -233,7 +314,14 @@ OpcUa_ServiceType*  UaTestServer_SupportedServices[] =
     &my_Read_ServiceType,
     &my_BrowseNext_ServiceType,
     &my_FindServers_ServiceType,
-    &dummy_CreateSubscription,
+    &my_TranslateBrowsePathsToNodeIds_ServiceType,
+    &my_CreateSubscription_ServiceType,
+    &my_DeleteSubscriptions_ServiceType,
+    &my_CreateMonitoredItems_ServiceType,
+    &my_DeleteMonitoredItems_ServiceType,
+    &my_SetPublishingMode_ServiceType,
+    &my_Publish_ServiceType,
+    &my_Republish_ServiceType,
     OpcUa_Null
 };
 
@@ -330,6 +418,9 @@ OpcUa_InitializeStatus(OpcUa_Module_Server, "UaTestServer_Initialize");
                                             &UaTestServer_g_pProxyStubConfiguration);
     OpcUa_GotoErrorIfBad(uStatus);
 
+    uStatus = OpcUa_Mutex_Create(&UaTestServer_g_hSubscriptionMutex);
+    OpcUa_GotoErrorIfBad(uStatus);
+
     /* Initialize security configuration. */
 
     uStatus = UaTestServer_CreateSecurityPolicies();
@@ -358,6 +449,8 @@ OpcUa_Void UaTestServer_Session_Free(SessionData** a_ppSession)
 
     Continuation_Point_Data.Cont_Point_Identifier=0;
     OpcUa_BrowseDescription_Clear(&Continuation_Point_Data.NodeToBrowse);
+
+    delete_all_subscriptions(pSession);
 
     pSession->Next->Prev = pSession->Prev;
     pSession->Prev->Next = pSession->Next;
@@ -425,6 +518,8 @@ OpcUa_Void UaTestServer_Clear(OpcUa_Void)
         pSession = g_UaTestServer_SessionHead.Next;
         UaTestServer_Session_Free(&pSession);
     }
+
+    OpcUa_Mutex_Delete(&UaTestServer_g_hSubscriptionMutex);
 	
     UaTestServer_SecurityClear();
     OpcUa_ProxyStub_Clear();
@@ -1303,9 +1398,6 @@ OpcUa_StatusCode OPCUA_DLLCALL Timer_Callback(  OpcUa_Void*             pvCallba
 
 OpcUa_StatusCode response_header_fill(SessionData* a_pSession,OpcUa_ResponseHeader* a_pResponseHeader,const OpcUa_RequestHeader* a_pRequestHeader,OpcUa_StatusCode Status)
 {
-	OpcUa_StatusCode    uStatus     = OpcUa_Good;
-	OpcUa_UInt32		diff;
-
 	OpcUa_ReturnErrorIfArgumentNull(a_pResponseHeader)
 	OpcUa_ReturnErrorIfNull(a_pRequestHeader, OpcUa_BadRequestHeaderInvalid)
 	
@@ -1314,27 +1406,7 @@ OpcUa_StatusCode response_header_fill(SessionData* a_pSession,OpcUa_ResponseHead
 	a_pResponseHeader->RequestHandle=a_pRequestHeader->RequestHandle;
 
 	a_pResponseHeader->Timestamp=OpcUa_DateTime_UtcNow();
-	uStatus=my_GetDateTimeDiffInSeconds32( (a_pRequestHeader->Timestamp),(a_pResponseHeader->Timestamp), &diff);
-	if(OpcUa_IsGood(uStatus))
-	{
-		if(a_pSession!=OpcUa_Null)
-		{
-			if((OpcUa_UInt32)a_pSession->session_timeout<diff)
-			{
-				#ifndef NO_DEBUGGING_
-				MY_TRACE("\nService runtime:%u msec (TimeOut)\n", diff);
-			    	#endif /*_DEBUGGING_*/
-				Status=OpcUa_BadTimeout;
-			}
-			else
-			{
-				#ifndef NO_DEBUGGING_
-				MY_TRACE("\nService runtime:%u msec ServiceTimeOut:%.0f msec\n",diff,a_pSession->session_timeout);
-				#endif /*_DEBUGGING_*/
-			}
-		}
-		a_pResponseHeader->ServiceResult=Status;
-	}
+	a_pResponseHeader->ServiceResult=Status;
 	
 	if((a_pRequestHeader->ReturnDiagnostics) != 0x00000000) // If diagnostic information requested.
 	{
@@ -1352,45 +1424,6 @@ OpcUa_StatusCode response_header_fill(SessionData* a_pSession,OpcUa_ResponseHead
 	//---------------------------------
 	return OpcUa_Good;
 }
-
-/*============================================================================
- * Calculate DateTime Difference In Seconds (Rounded)
- *===========================================================================*/
-OpcUa_StatusCode  my_GetDateTimeDiffInSeconds32(	OpcUa_DateTime  a_Value1,
-														OpcUa_DateTime  a_Value2,
-														OpcUa_UInt32*   a_puResult)
-{
-    OpcUa_UInt64 ullValue1 = 0;
-    OpcUa_UInt64 ullValue2 = 0;
-    OpcUa_UInt64 ullResult = 0;
-
-    OpcUa_ReturnErrorIfArgumentNull(a_puResult);
-
-    *a_puResult = (OpcUa_UInt32)0;
-
-    ullValue1 = a_Value1.dwHighDateTime;
-    ullValue1 = (ullValue1 << 32) + a_Value1.dwLowDateTime;
-
-    ullValue2 = a_Value2.dwHighDateTime;
-    ullValue2 = (ullValue2 << 32) + a_Value2.dwLowDateTime;
-
-    if(ullValue1 > ullValue2)
-    {
-        return OpcUa_BadInvalidArgument;
-    }
-
-    ullResult = (OpcUa_UInt64)((ullValue2 - ullValue1) / 10000);
-
-    if(ullResult > (OpcUa_UInt64)OpcUa_UInt32_Max)
-    {
-        return OpcUa_BadOutOfRange;
-    }
-
-    *a_puResult = (OpcUa_UInt32)ullResult;
-
-    return OpcUa_Good;
-}
-
 
 OpcUa_StatusCode getEndpoints(	OpcUa_Int32*                 a_pNoOfEndpoints,
 								OpcUa_EndpointDescription**  a_ppEndpoints)
@@ -1531,7 +1564,6 @@ int main(void)
 	CloseSession.ResponseType					= &OpcUa_CloseSessionResponse_EncodeableType;
   	my_BrowseNext_ServiceType.ResponseType		= &OpcUa_BrowseNextResponse_EncodeableType;
 	my_FindServers_ServiceType.ResponseType		= &OpcUa_FindServersResponse_EncodeableType;
-	dummy_CreateSubscription.ResponseType       = &OpcUa_CreateSubscriptionResponse_EncodeableType;
 
     printf("Warning: The sample server is intended to show how to use the ANSI C stack and is has not gone through any sort of quality assurance process. Therefore, it cannot be used in any production system.\n");
     printf("Press enter to proceed or CTRL-C to exit now!\n");

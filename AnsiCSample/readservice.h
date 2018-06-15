@@ -50,6 +50,9 @@ OpcUa_StatusCode fill_datatype_arraytype_in_my_Variant(OpcUa_DataValue* ,OpcUa_B
 
 OpcUa_StatusCode assign_Timestamp(OpcUa_DataValue* ,OpcUa_TimestampsToReturn );
 
-
+OpcUa_StatusCode fill_data_value(
+    OpcUa_DataValue*         a_ValueToFill,
+    _VariableNode_*          a_pNode,
+    OpcUa_TimestampsToReturn a_eTimestampsToReturn);
 
 #endif /*_readservice_*/

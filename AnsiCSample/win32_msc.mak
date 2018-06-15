@@ -48,6 +48,8 @@ OBJECTS = \
 	$(ODIR)\browseservice.obj \
 	$(ODIR)\init_variables_of_addressspace.obj \
 	$(ODIR)\readservice.obj \
+	$(ODIR)\subscriptionservice.obj \
+	$(ODIR)\translateservice.obj \
 
 all: $(TARGET)
 

@@ -154,8 +154,6 @@ OpcUa_StatusCode my_BrowseNext(
 	MY_TRACE("\nSERVICE===END============================================\n\n\n"); 
 #endif /*_DEBUGGING_*/
 
-	RESET_SESSION_COUNTER(pSession);
-
     OpcUa_ReturnStatusCode;
     OpcUa_BeginErrorHandling;
 

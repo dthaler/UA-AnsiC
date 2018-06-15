@@ -33,8 +33,10 @@
 #include <opcua_memorystream.h>
 #include <opcua_binaryencoder.h>
 OPCUA_DECLARE_GENERIC_COMPARE(NodeId)
+OPCUA_DECLARE_GENERIC_COMPARE(String)
 OPCUA_DECLARE_GENERIC_COPY(NodeId)
 OPCUA_DECLARE_GENERIC_COPY(BrowseDescription)
+OPCUA_DECLARE_GENERIC_COPY(String)
 
 typedef struct
 {
@@ -80,6 +82,8 @@ OpcUa_StatusCode my_BrowseNext(
 OpcUa_StatusCode		browse						(OpcUa_BrowseDescription* ,OpcUa_BrowseResult*,OpcUa_Int );  //  Think of better names!
 
 OpcUa_Void*				search_for_node				(OpcUa_NodeId );
+
+OpcUa_Void*			search_for_node_by_path		(OpcUa_Void*, const OpcUa_CharA*, OpcUa_StringA*);
 
 OpcUa_Boolean			is_subnode				    (OpcUa_NodeId , OpcUa_NodeId  ,OpcUa_Boolean   );
 

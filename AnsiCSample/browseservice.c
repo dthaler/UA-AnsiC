@@ -39,7 +39,9 @@
 #include "general_header.h"
 
 OPCUA_IMPLEMENT_SCALAR_COMPARE(NodeId, 0)
+OPCUA_IMPLEMENT_SCALAR_COMPARE(String, 0)
 OPCUA_IMPLEMENT_SCALAR_COPY(NodeId, 0)
+OPCUA_IMPLEMENT_SCALAR_COPY(String, 0)
 OPCUA_IMPLEMENT_ENCODEABLE_COPY(BrowseDescription, 0)
 
 #define MAX_NO_OF_RETURNED_REFERENCES			5
@@ -347,6 +349,51 @@ OpcUa_StatusCode browse(OpcUa_BrowseDescription* a_pNodesToBrowse,OpcUa_BrowseRe
 		uStatus=OpcUa_BadOutOfMemory;
 	
 	OpcUa_FinishErrorHandling;
+}
+
+OpcUa_Void* search_for_node_by_path(OpcUa_Void* a_pParent, const OpcUa_CharA* a_sLabel, OpcUa_StringA* a_pNamespaceUri)
+{
+	_BaseAttribute_* pParent = (_BaseAttribute_*)a_pParent;
+	_BaseAttribute_ *pNode;
+	OpcUa_Int i;
+
+	*a_pNamespaceUri = OpcUa_Null;
+
+	if (pParent == OpcUa_Null)
+	{
+		// Find top level node.
+
+		// Check all ObjectNodes--------------------------------------------------------
+		for (i = 0; i < ARRAY_SIZE_(all_ObjectNodes); i++)
+		{
+			pNode = &all_ObjectNodes[i].BaseAttribute;
+			if (strcmp(pNode->BrowseName, a_sLabel) == 0)
+			{
+				return pNode;
+			}
+		}
+
+		return OpcUa_Null;
+	}
+	else
+	{
+		// Find child node.
+		for (i = 0; i < pParent->NoOfReferences; i++)
+		{
+			pNode = (_BaseAttribute_*)search_for_node((pParent->References + i)->Target_NodeId);
+			if (pNode == OpcUa_Null)
+			{
+				continue;
+			}
+			if (strcmp(pNode->BrowseName, a_sLabel) == 0)
+			{
+				*a_pNamespaceUri = (pParent->References + i)->Target_NamespaceUri;
+				return pNode;
+			}
+		}
+
+		return OpcUa_Null;
+	}
 }
 
 OpcUa_Void* search_for_node(OpcUa_NodeId NodeId)

@@ -7,6 +7,8 @@
     <ClInclude Include="general_header.h" />
     <ClInclude Include="mytrace.h" />
     <ClInclude Include="readservice.h" />
+    <ClInclude Include="subscriptionservice.h" />
+    <ClInclude Include="translateservice.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ansicservermain.c" />
@@ -14,5 +16,7 @@
     <ClCompile Include="browseservice.c" />
     <ClCompile Include="init_variables_of_addressspace.c" />
     <ClCompile Include="readservice.c" />
+    <ClCompile Include="subscriptionservice.c" />
+    <ClCompile Include="translateservice.c" />
   </ItemGroup>
 </Project>
