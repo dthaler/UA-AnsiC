@@ -4,7 +4,7 @@ set OPENSSL_SOURCEDIR=%ROOT%openssl-1.0.??
 set OPENSSL_INSTALDIR=%ROOT%openssl
 set MAKEFLAGS=
 
-if not "%1" == "" goto help
+if "%1" == "/?" goto help
 
 call :testroot %ROOT%
 if errorlevel 1 goto error0
@@ -29,11 +29,10 @@ call ms\do_ms
 if errorlevel 1 goto error
 
 sed -i "/PERL/ s/\\\\/\\//g; /PERL/ s/\\$@/\$(@:\\\\=\\/)/;" ms/nt*.mak
-nmake -f ms\nt.mak clean
-
-nmake -f ms\nt.mak
+nmake -f ms\nt.mak %*
 if errorlevel 1 goto error
 
+if "%1" == "clean" goto ossl_done
 nmake -f ms\nt.mak install
 if errorlevel 1 goto error
 
@@ -41,19 +40,13 @@ if errorlevel 1 goto error
 cd ..\Stack
 if errorlevel 1 goto error
 
-nmake -f win32_msc.mak clean
-if errorlevel 1 goto error
-
-nmake -f win32_msc.mak
+nmake -f win32_msc.mak %*
 if errorlevel 1 goto error
 
 cd ..\AnsiCSample
 if errorlevel 1 goto error
 
-nmake -f win32_msc.mak clean
-if errorlevel 1 goto error
-
-nmake -f win32_msc.mak
+nmake -f win32_msc.mak %*
 if errorlevel 1 goto error
 
 cd ..

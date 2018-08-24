@@ -30,9 +30,10 @@ Please consult the OpenSSL documentation for help building the library.
 Open the Visual Studio Command Shell .
 Make sure that perl installed on the build machine and the path executable is available in the path.  Any perl will do, even cygwin.
 Download and extract the latest openssl-1.0.2 source tar ball to the stack root folder.
-Then cd to the root folder and execute build_win32.bat or build_win64.bat depending on your target architecture.
+Then cd to the root folder and execute build\_win32.bat or build\_win64.bat depending on your target architecture.
 This will automatically build openssl, the OPC UA Stack and the sample server.
-Dependencies are not supported, it will always be a full build.
+Dependencies and incremental bulds are supported.
+To force a full build use: build\_win32.bat clean all
 
 Visual studio 2013 projects for the stack and example server are available as well. 
 Note: the OpenSSL libraries must be compiled using the above mentioned steps before building the project using Visual Studio.
